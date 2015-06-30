@@ -11,10 +11,21 @@
 		970AA1801B42B16D0059448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA17F1B42B16D0059448F /* AppDelegate.m */; };
 		970AA1831B42B16D0059448F /* NightKiss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1811B42B16D0059448F /* NightKiss.xcdatamodeld */; };
 		970AA1861B42B16D0059448F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1851B42B16D0059448F /* ViewController.m */; };
-		970AA1891B42B16D0059448F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1871B42B16D0059448F /* Main.storyboard */; };
 		970AA18B1B42B16D0059448F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970AA18A1B42B16D0059448F /* Images.xcassets */; };
 		970AA18E1B42B16D0059448F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970AA18C1B42B16D0059448F /* LaunchScreen.xib */; };
 		970AA19A1B42B16D0059448F /* NightKissTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1991B42B16D0059448F /* NightKissTests.m */; };
+		970AA1AB1B42B2970059448F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1A61B42B2970059448F /* RECommonFunctions.m */; };
+		970AA1AC1B42B2970059448F /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1A81B42B2970059448F /* RESideMenu.m */; };
+		970AA1AD1B42B2970059448F /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1AA1B42B2970059448F /* UIViewController+RESideMenu.m */; };
+		970AA1B01B42B2F40059448F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1AF1B42B2F40059448F /* RootViewController.m */; };
+		970AA1B31B42B32C0059448F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1B21B42B32C0059448F /* MenuViewController.m */; };
+		970AA1B71B42B9F10059448F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1B61B42B9F10059448F /* SettingViewController.m */; };
+		970AA1BA1B42BB950059448F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1B91B42BB950059448F /* BaseViewController.m */; };
+		970AA1BD1B42BD9B0059448F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1BC1B42BD9B0059448F /* background.png */; };
+		970AA1C01B42C2080059448F /* tvtop.png in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1BE1B42C2080059448F /* tvtop.png */; };
+		970AA1C11B42C2080059448F /* tvbottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1BF1B42C2080059448F /* tvbottom.png */; };
+		970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1C41B42C4470059448F /* ArticleTableViewCell.m */; };
+		970AA1C71B42C6B10059448F /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1C61B42C6B10059448F /* test.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +47,32 @@
 		970AA1821B42B16D0059448F /* NightKiss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NightKiss.xcdatamodel; sourceTree = "<group>"; };
 		970AA1841B42B16D0059448F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		970AA1851B42B16D0059448F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		970AA1881B42B16D0059448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		970AA18A1B42B16D0059448F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		970AA18D1B42B16D0059448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		970AA1931B42B16D0059448F /* NightKissTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightKissTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		970AA1981B42B16D0059448F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970AA1991B42B16D0059448F /* NightKissTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NightKissTests.m; sourceTree = "<group>"; };
+		970AA1A51B42B2970059448F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		970AA1A61B42B2970059448F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		970AA1A71B42B2970059448F /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		970AA1A81B42B2970059448F /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		970AA1A91B42B2970059448F /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		970AA1AA1B42B2970059448F /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		970AA1AE1B42B2F40059448F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		970AA1AF1B42B2F40059448F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		970AA1B11B42B32C0059448F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		970AA1B21B42B32C0059448F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		970AA1B41B42B4290059448F /* NightKiss-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NightKiss-Prefix.pch"; sourceTree = "<group>"; };
+		970AA1B51B42B9F10059448F /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		970AA1B61B42B9F10059448F /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		970AA1B81B42BB950059448F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		970AA1B91B42BB950059448F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		970AA1BC1B42BD9B0059448F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		970AA1BE1B42C2080059448F /* tvtop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tvtop.png; sourceTree = "<group>"; };
+		970AA1BF1B42C2080059448F /* tvbottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tvbottom.png; sourceTree = "<group>"; };
+		970AA1C31B42C4470059448F /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
+		970AA1C41B42C4470059448F /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
+		970AA1C61B42C6B10059448F /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +114,24 @@
 		970AA1791B42B16D0059448F /* NightKiss */ = {
 			isa = PBXGroup;
 			children = (
+				970AA1C21B42C4180059448F /* Cells */,
+				970AA1BB1B42BD890059448F /* Images */,
+				970AA1A31B42B2810059448F /* OpenSources */,
 				970AA17E1B42B16D0059448F /* AppDelegate.h */,
 				970AA17F1B42B16D0059448F /* AppDelegate.m */,
+				970AA1B81B42BB950059448F /* BaseViewController.h */,
+				970AA1B91B42BB950059448F /* BaseViewController.m */,
+				970AA1AE1B42B2F40059448F /* RootViewController.h */,
+				970AA1AF1B42B2F40059448F /* RootViewController.m */,
+				970AA1B11B42B32C0059448F /* MenuViewController.h */,
+				970AA1B21B42B32C0059448F /* MenuViewController.m */,
+				970AA1B51B42B9F10059448F /* SettingViewController.h */,
+				970AA1B61B42B9F10059448F /* SettingViewController.m */,
 				970AA1841B42B16D0059448F /* ViewController.h */,
 				970AA1851B42B16D0059448F /* ViewController.m */,
-				970AA1871B42B16D0059448F /* Main.storyboard */,
 				970AA18A1B42B16D0059448F /* Images.xcassets */,
 				970AA18C1B42B16D0059448F /* LaunchScreen.xib */,
+				970AA1C61B42C6B10059448F /* test.html */,
 				970AA1811B42B16D0059448F /* NightKiss.xcdatamodeld */,
 				970AA17A1B42B16D0059448F /* Supporting Files */,
 			);
@@ -99,6 +141,7 @@
 		970AA17A1B42B16D0059448F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				970AA1B41B42B4290059448F /* NightKiss-Prefix.pch */,
 				970AA17B1B42B16D0059448F /* Info.plist */,
 				970AA17C1B42B16D0059448F /* main.m */,
 			);
@@ -120,6 +163,46 @@
 				970AA1981B42B16D0059448F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		970AA1A31B42B2810059448F /* OpenSources */ = {
+			isa = PBXGroup;
+			children = (
+				970AA1A41B42B2970059448F /* RESideMenu */,
+			);
+			name = OpenSources;
+			sourceTree = "<group>";
+		};
+		970AA1A41B42B2970059448F /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				970AA1A51B42B2970059448F /* RECommonFunctions.h */,
+				970AA1A61B42B2970059448F /* RECommonFunctions.m */,
+				970AA1A71B42B2970059448F /* RESideMenu.h */,
+				970AA1A81B42B2970059448F /* RESideMenu.m */,
+				970AA1A91B42B2970059448F /* UIViewController+RESideMenu.h */,
+				970AA1AA1B42B2970059448F /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
+		970AA1BB1B42BD890059448F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				970AA1BE1B42C2080059448F /* tvtop.png */,
+				970AA1BF1B42C2080059448F /* tvbottom.png */,
+				970AA1BC1B42BD9B0059448F /* background.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		970AA1C21B42C4180059448F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				970AA1C31B42C4470059448F /* ArticleTableViewCell.h */,
+				970AA1C41B42C4470059448F /* ArticleTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +285,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				970AA1891B42B16D0059448F /* Main.storyboard in Resources */,
 				970AA18E1B42B16D0059448F /* LaunchScreen.xib in Resources */,
+				970AA1C11B42C2080059448F /* tvbottom.png in Resources */,
+				970AA1C71B42C6B10059448F /* test.html in Resources */,
+				970AA1BD1B42BD9B0059448F /* background.png in Resources */,
+				970AA1C01B42C2080059448F /* tvtop.png in Resources */,
 				970AA18B1B42B16D0059448F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,9 +309,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				970AA1801B42B16D0059448F /* AppDelegate.m in Sources */,
+				970AA1B31B42B32C0059448F /* MenuViewController.m in Sources */,
+				970AA1BA1B42BB950059448F /* BaseViewController.m in Sources */,
+				970AA1AB1B42B2970059448F /* RECommonFunctions.m in Sources */,
+				970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */,
+				970AA1B01B42B2F40059448F /* RootViewController.m in Sources */,
 				970AA17D1B42B16D0059448F /* main.m in Sources */,
 				970AA1861B42B16D0059448F /* ViewController.m in Sources */,
+				970AA1AC1B42B2970059448F /* RESideMenu.m in Sources */,
+				970AA1AD1B42B2970059448F /* UIViewController+RESideMenu.m in Sources */,
 				970AA1831B42B16D0059448F /* NightKiss.xcdatamodeld in Sources */,
+				970AA1B71B42B9F10059448F /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,14 +342,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		970AA1871B42B16D0059448F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				970AA1881B42B16D0059448F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		970AA18C1B42B16D0059448F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,6 +378,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NightKiss/NightKiss-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -334,6 +421,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NightKiss/NightKiss-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

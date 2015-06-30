@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
-
+#import "BaseViewController.h"
+@interface ViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,strong)UITableView * tableview;
+@property (nonatomic,assign)CGFloat rowHeight;
 @end
 
