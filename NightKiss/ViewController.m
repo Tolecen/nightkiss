@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.rowHeight = ScreenHeight-40-40;
+    
     self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(10, 20, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
 //    self.tableview.rowHeight = 200;
     self.tableview.delegate = self;
@@ -61,7 +63,7 @@
 -(void)resetCellHeightWithContentSizeH:(CGFloat)height
 {
     self.rowHeight = height;
-    self.tableview.contentSize = CGSizeMake(ScreenWidth-20, height+40);
+//    self.tableview.contentSize = CGSizeMake(ScreenWidth-20, height+40);
     [self.tableview reloadData];
 }
 
