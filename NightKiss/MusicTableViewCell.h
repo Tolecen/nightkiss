@@ -31,5 +31,6 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 @property (nonatomic,strong) UISlider * sliderV;
 @property (nonatomic,strong) UIButton * playBtn;
 @property (nonatomic,strong) Track * theTrack;
+@property (nonatomic,strong) NSMutableDictionary * artDict;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "MusicTableViewCell.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "RootViewController.h"
 @implementation MusicTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -69,6 +70,8 @@
         [self.musicNameL setText:self.theTrack.title];
         [self.artistNameL setText:self.theTrack.artist];
         self.albumV.imageURL = [NSURL URLWithString:self.theTrack.albumUrlStr];
+        
+        
         [self setMediaInfo];
     }
     
@@ -77,20 +80,24 @@
 - (void) setMediaInfo
 {
     if (NSClassFromString(@"MPNowPlayingInfoCenter")) {
-        NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+        if (!self.artDict) {
+            self.artDict = [[NSMutableDictionary alloc] init];
+        }
         
         
-        [dict setObject:self.theTrack.title forKey:MPMediaItemPropertyAlbumTitle];
-        [dict setObject:self.theTrack.artist forKey:MPMediaItemPropertyArtist];
-        [dict setObject:[NSNumber numberWithInt:0] forKey:MPMediaItemPropertyPlaybackDuration];
+        
+        [self.artDict setObject:self.theTrack.title forKey:MPMediaItemPropertyAlbumTitle];
+        [self.artDict setObject:self.theTrack.artist forKey:MPMediaItemPropertyArtist];
+        [self.artDict setObject:[NSNumber numberWithFloat:[_streamer duration]] forKey:MPMediaItemPropertyPlaybackDuration];
+        [self.artDict setObject:[NSNumber numberWithFloat:[_streamer currentTime]] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
         
         if (self.albumV.image) {
             MPMediaItemArtwork * mArt = [[MPMediaItemArtwork alloc] initWithImage:self.albumV.image];
-            [dict setObject:mArt forKey:MPMediaItemPropertyArtwork];
+            [self.artDict setObject:mArt forKey:MPMediaItemPropertyArtwork];
         }
         
         [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nil;
-        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:self.artDict];
     }
 }
 
@@ -123,6 +130,8 @@
         [_streamer addObserver:self forKeyPath:@"duration" options:NSKeyValueObservingOptionNew context:kDurationKVOKey];
         [_streamer addObserver:self forKeyPath:@"bufferingRatio" options:NSKeyValueObservingOptionNew context:kBufferingRatioKVOKey];
         
+        [RootViewController sharedRootViewController].currentStreamer = _streamer;
+        
         [_streamer play];
         
         [self _updateBufferingStatus];
@@ -148,6 +157,7 @@
     else {
         [self.sliderV setValue:[_streamer currentTime] / [_streamer duration] animated:YES];
     }
+    [self setMediaInfo];
 }
 
 - (void)_updateStatus

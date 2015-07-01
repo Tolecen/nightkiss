@@ -33,6 +33,47 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+}
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (void) remoteControlReceivedWithEvent: (UIEvent *) receivedEvent {
+    if (receivedEvent.type == UIEventTypeRemoteControl) {
+        
+        switch (receivedEvent.subtype) {
+                
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+//                [self playAndStopSong:self.playButton];
+                break;
+                
+            case UIEventSubtypeRemoteControlPreviousTrack:
+//                [self playLastButton:self.lastButton];
+                break;
+                
+            case UIEventSubtypeRemoteControlNextTrack:
+//                [self playNextSong:self.nextButton];
+                break;
+                
+            case UIEventSubtypeRemoteControlPlay:
+                [[RootViewController sharedRootViewController].currentStreamer play];
+//                [self playAndStopSong:self.playButton];
+                break;
+                
+            case UIEventSubtypeRemoteControlPause:{
+                NSLog(@"pause");
+                [[RootViewController sharedRootViewController].currentStreamer pause];
+//                [self playAndStopSong:self.playButton];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

@@ -106,24 +106,24 @@
     }
 
 }
-- (void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    [self becomeFirstResponder];
-}
-
-- (void) viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-    [self resignFirstResponder];
-}
-
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
+//- (void) viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+//    [self becomeFirstResponder];
+//}
+//
+//- (void) viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+//    [self resignFirstResponder];
+//}
+//
+//- (BOOL)canBecomeFirstResponder
+//{
+//    return YES;
+//}
 -(void)resetCellHeightWithContentSizeH:(CGFloat)height
 {
     self.rowHeight = height;
