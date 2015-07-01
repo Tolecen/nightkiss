@@ -21,6 +21,7 @@
     #define SystemVersion [UIDevice currentDevice].systemVersion
     #define ScreenWidth [UIScreen mainScreen].bounds.size.width
     #define ScreenHeight [UIScreen mainScreen].bounds.size.height
+    #define NormalCellHeight  ScreenHeight-40-40
 #endif
 
 #ifndef __OPTIMIZE__

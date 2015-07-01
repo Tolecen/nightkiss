@@ -11,5 +11,6 @@
 @interface ViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView * tableview;
 @property (nonatomic,assign)CGFloat rowHeight;
+@property (nonatomic,assign)int mediaType;
 @end
 

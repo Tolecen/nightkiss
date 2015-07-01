@@ -26,6 +26,44 @@
 		970AA1C11B42C2080059448F /* tvbottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1BF1B42C2080059448F /* tvbottom.png */; };
 		970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1C41B42C4470059448F /* ArticleTableViewCell.m */; };
 		970AA1C71B42C6B10059448F /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1C61B42C6B10059448F /* test.html */; };
+		978198681B43CFCA0034E0F9 /* PicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198671B43CFCA0034E0F9 /* PicTableViewCell.m */; };
+		9781986B1B43D1B10034E0F9 /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781986A1B43D1B10034E0F9 /* MusicTableViewCell.m */; };
+		9781987B1B43D3960034E0F9 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781986F1B43D3960034E0F9 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9781987C1B43D3960034E0F9 /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198721B43D3960034E0F9 /* EGOImageButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9781987D1B43D3960034E0F9 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198751B43D3960034E0F9 /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9781987E1B43D3960034E0F9 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198771B43D3960034E0F9 /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9781987F1B43D3960034E0F9 /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781987A1B43D3960034E0F9 /* EGOImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		978198A91B43DD520034E0F9 /* DOUAudioAnalyzer+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198821B43DD520034E0F9 /* DOUAudioAnalyzer+Default.m */; };
+		978198AA1B43DD520034E0F9 /* DOUAudioAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198841B43DD520034E0F9 /* DOUAudioAnalyzer.m */; };
+		978198AB1B43DD520034E0F9 /* DOUAudioDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198881B43DD520034E0F9 /* DOUAudioDecoder.m */; };
+		978198AC1B43DD520034E0F9 /* DOUAudioEventLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781988A1B43DD520034E0F9 /* DOUAudioEventLoop.m */; };
+		978198AD1B43DD520034E0F9 /* DOUAudioFilePreprocessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781988D1B43DD520034E0F9 /* DOUAudioFilePreprocessor.m */; };
+		978198AE1B43DD520034E0F9 /* DOUAudioFileProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781988F1B43DD520034E0F9 /* DOUAudioFileProvider.m */; };
+		978198AF1B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198911B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.m */; };
+		978198B01B43DD520034E0F9 /* DOUAudioLPCM.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198931B43DD520034E0F9 /* DOUAudioLPCM.m */; };
+		978198B11B43DD520034E0F9 /* DOUAudioPlaybackItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198951B43DD520034E0F9 /* DOUAudioPlaybackItem.m */; };
+		978198B21B43DD520034E0F9 /* DOUAudioRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198971B43DD520034E0F9 /* DOUAudioRenderer.m */; };
+		978198B31B43DD520034E0F9 /* DOUAudioSpatialAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198991B43DD520034E0F9 /* DOUAudioSpatialAnalyzer.m */; };
+		978198B41B43DD520034E0F9 /* DOUAudioStreamer+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781989B1B43DD520034E0F9 /* DOUAudioStreamer+Options.m */; };
+		978198B51B43DD520034E0F9 /* DOUAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781989D1B43DD520034E0F9 /* DOUAudioStreamer.m */; };
+		978198B61B43DD520034E0F9 /* DOUAudioVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198A01B43DD520034E0F9 /* DOUAudioVisualizer.m */; };
+		978198B71B43DD520034E0F9 /* DOUEAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198A21B43DD520034E0F9 /* DOUEAGLView.m */; };
+		978198B81B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198A41B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.m */; };
+		978198B91B43DD520034E0F9 /* DOUSimpleHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198A61B43DD520034E0F9 /* DOUSimpleHTTPRequest.m */; };
+		978198BA1B43DD520034E0F9 /* NSData+DOUMappedFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198A81B43DD520034E0F9 /* NSData+DOUMappedFile.m */; };
+		978198BC1B43DD880034E0F9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198BB1B43DD880034E0F9 /* MediaPlayer.framework */; };
+		978198BE1B43DD8F0034E0F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198BD1B43DD8F0034E0F9 /* AVFoundation.framework */; };
+		978198C01B43DD960034E0F9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198BF1B43DD960034E0F9 /* MobileCoreServices.framework */; };
+		978198C21B43DDA50034E0F9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198C11B43DDA50034E0F9 /* OpenGLES.framework */; };
+		978198C41B43DDAB0034E0F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198C31B43DDAB0034E0F9 /* QuartzCore.framework */; };
+		978198C61B43DDB20034E0F9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198C51B43DDB20034E0F9 /* Accelerate.framework */; };
+		978198C81B43DDB80034E0F9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198C71B43DDB80034E0F9 /* CFNetwork.framework */; };
+		978198CA1B43DDC00034E0F9 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198C91B43DDC00034E0F9 /* CoreAudio.framework */; };
+		978198CC1B43DDC60034E0F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198CB1B43DDC60034E0F9 /* AudioToolbox.framework */; };
+		978198CE1B43DDCC0034E0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198CD1B43DDCC0034E0F9 /* UIKit.framework */; };
+		978198D01B43DDD20034E0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198CF1B43DDD20034E0F9 /* Foundation.framework */; };
+		978198D21B43DDD80034E0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978198D11B43DDD80034E0F9 /* CoreGraphics.framework */; };
+		978198D81B43DE4C0034E0F9 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198D51B43DE4C0034E0F9 /* Track.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +111,74 @@
 		970AA1C31B42C4470059448F /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		970AA1C41B42C4470059448F /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		970AA1C61B42C6B10059448F /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		978198661B43CFCA0034E0F9 /* PicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicTableViewCell.h; sourceTree = "<group>"; };
+		978198671B43CFCA0034E0F9 /* PicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicTableViewCell.m; sourceTree = "<group>"; };
+		978198691B43D1B10034E0F9 /* MusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTableViewCell.h; sourceTree = "<group>"; };
+		9781986A1B43D1B10034E0F9 /* MusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTableViewCell.m; sourceTree = "<group>"; };
+		9781986E1B43D3960034E0F9 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		9781986F1B43D3960034E0F9 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		978198711B43D3960034E0F9 /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
+		978198721B43D3960034E0F9 /* EGOImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageButton.m; sourceTree = "<group>"; };
+		978198741B43D3960034E0F9 /* EGOImageLoadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoadConnection.h; sourceTree = "<group>"; };
+		978198751B43D3960034E0F9 /* EGOImageLoadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoadConnection.m; sourceTree = "<group>"; };
+		978198761B43D3960034E0F9 /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
+		978198771B43D3960034E0F9 /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
+		978198791B43D3960034E0F9 /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
+		9781987A1B43D3960034E0F9 /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		978198811B43DD520034E0F9 /* DOUAudioAnalyzer+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOUAudioAnalyzer+Default.h"; sourceTree = "<group>"; };
+		978198821B43DD520034E0F9 /* DOUAudioAnalyzer+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOUAudioAnalyzer+Default.m"; sourceTree = "<group>"; };
+		978198831B43DD520034E0F9 /* DOUAudioAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioAnalyzer.h; sourceTree = "<group>"; };
+		978198841B43DD520034E0F9 /* DOUAudioAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioAnalyzer.m; sourceTree = "<group>"; };
+		978198851B43DD520034E0F9 /* DOUAudioAnalyzer_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioAnalyzer_Private.h; sourceTree = "<group>"; };
+		978198861B43DD520034E0F9 /* DOUAudioBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioBase.h; sourceTree = "<group>"; };
+		978198871B43DD520034E0F9 /* DOUAudioDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioDecoder.h; sourceTree = "<group>"; };
+		978198881B43DD520034E0F9 /* DOUAudioDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioDecoder.m; sourceTree = "<group>"; };
+		978198891B43DD520034E0F9 /* DOUAudioEventLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioEventLoop.h; sourceTree = "<group>"; };
+		9781988A1B43DD520034E0F9 /* DOUAudioEventLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioEventLoop.m; sourceTree = "<group>"; };
+		9781988B1B43DD520034E0F9 /* DOUAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioFile.h; sourceTree = "<group>"; };
+		9781988C1B43DD520034E0F9 /* DOUAudioFilePreprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioFilePreprocessor.h; sourceTree = "<group>"; };
+		9781988D1B43DD520034E0F9 /* DOUAudioFilePreprocessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioFilePreprocessor.m; sourceTree = "<group>"; };
+		9781988E1B43DD520034E0F9 /* DOUAudioFileProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioFileProvider.h; sourceTree = "<group>"; };
+		9781988F1B43DD520034E0F9 /* DOUAudioFileProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioFileProvider.m; sourceTree = "<group>"; };
+		978198901B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioFrequencyAnalyzer.h; sourceTree = "<group>"; };
+		978198911B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioFrequencyAnalyzer.m; sourceTree = "<group>"; };
+		978198921B43DD520034E0F9 /* DOUAudioLPCM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioLPCM.h; sourceTree = "<group>"; };
+		978198931B43DD520034E0F9 /* DOUAudioLPCM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioLPCM.m; sourceTree = "<group>"; };
+		978198941B43DD520034E0F9 /* DOUAudioPlaybackItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioPlaybackItem.h; sourceTree = "<group>"; };
+		978198951B43DD520034E0F9 /* DOUAudioPlaybackItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioPlaybackItem.m; sourceTree = "<group>"; };
+		978198961B43DD520034E0F9 /* DOUAudioRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioRenderer.h; sourceTree = "<group>"; };
+		978198971B43DD520034E0F9 /* DOUAudioRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioRenderer.m; sourceTree = "<group>"; };
+		978198981B43DD520034E0F9 /* DOUAudioSpatialAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioSpatialAnalyzer.h; sourceTree = "<group>"; };
+		978198991B43DD520034E0F9 /* DOUAudioSpatialAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioSpatialAnalyzer.m; sourceTree = "<group>"; };
+		9781989A1B43DD520034E0F9 /* DOUAudioStreamer+Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOUAudioStreamer+Options.h"; sourceTree = "<group>"; };
+		9781989B1B43DD520034E0F9 /* DOUAudioStreamer+Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOUAudioStreamer+Options.m"; sourceTree = "<group>"; };
+		9781989C1B43DD520034E0F9 /* DOUAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioStreamer.h; sourceTree = "<group>"; };
+		9781989D1B43DD520034E0F9 /* DOUAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioStreamer.m; sourceTree = "<group>"; };
+		9781989E1B43DD520034E0F9 /* DOUAudioStreamer_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioStreamer_Private.h; sourceTree = "<group>"; };
+		9781989F1B43DD520034E0F9 /* DOUAudioVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioVisualizer.h; sourceTree = "<group>"; };
+		978198A01B43DD520034E0F9 /* DOUAudioVisualizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUAudioVisualizer.m; sourceTree = "<group>"; };
+		978198A11B43DD520034E0F9 /* DOUEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUEAGLView.h; sourceTree = "<group>"; };
+		978198A21B43DD520034E0F9 /* DOUEAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUEAGLView.m; sourceTree = "<group>"; };
+		978198A31B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUMPMediaLibraryAssetLoader.h; sourceTree = "<group>"; };
+		978198A41B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUMPMediaLibraryAssetLoader.m; sourceTree = "<group>"; };
+		978198A51B43DD520034E0F9 /* DOUSimpleHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUSimpleHTTPRequest.h; sourceTree = "<group>"; };
+		978198A61B43DD520034E0F9 /* DOUSimpleHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUSimpleHTTPRequest.m; sourceTree = "<group>"; };
+		978198A71B43DD520034E0F9 /* NSData+DOUMappedFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DOUMappedFile.h"; sourceTree = "<group>"; };
+		978198A81B43DD520034E0F9 /* NSData+DOUMappedFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DOUMappedFile.m"; sourceTree = "<group>"; };
+		978198BB1B43DD880034E0F9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		978198BD1B43DD8F0034E0F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		978198BF1B43DD960034E0F9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		978198C11B43DDA50034E0F9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		978198C31B43DDAB0034E0F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		978198C51B43DDB20034E0F9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		978198C71B43DDB80034E0F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		978198C91B43DDC00034E0F9 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		978198CB1B43DDC60034E0F9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		978198CD1B43DDCC0034E0F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		978198CF1B43DDD20034E0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		978198D11B43DDD80034E0F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		978198D41B43DE4C0034E0F9 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		978198D51B43DE4C0034E0F9 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +193,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978198D21B43DDD80034E0F9 /* CoreGraphics.framework in Frameworks */,
+				978198D01B43DDD20034E0F9 /* Foundation.framework in Frameworks */,
+				978198CE1B43DDCC0034E0F9 /* UIKit.framework in Frameworks */,
+				978198CC1B43DDC60034E0F9 /* AudioToolbox.framework in Frameworks */,
+				978198CA1B43DDC00034E0F9 /* CoreAudio.framework in Frameworks */,
+				978198C81B43DDB80034E0F9 /* CFNetwork.framework in Frameworks */,
+				978198C61B43DDB20034E0F9 /* Accelerate.framework in Frameworks */,
+				978198C41B43DDAB0034E0F9 /* QuartzCore.framework in Frameworks */,
+				978198C21B43DDA50034E0F9 /* OpenGLES.framework in Frameworks */,
+				978198C01B43DD960034E0F9 /* MobileCoreServices.framework in Frameworks */,
+				978198BE1B43DD8F0034E0F9 /* AVFoundation.framework in Frameworks */,
+				978198BC1B43DD880034E0F9 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +214,18 @@
 		970AA16E1B42B16D0059448F = {
 			isa = PBXGroup;
 			children = (
+				978198D11B43DDD80034E0F9 /* CoreGraphics.framework */,
+				978198CF1B43DDD20034E0F9 /* Foundation.framework */,
+				978198CD1B43DDCC0034E0F9 /* UIKit.framework */,
+				978198CB1B43DDC60034E0F9 /* AudioToolbox.framework */,
+				978198C91B43DDC00034E0F9 /* CoreAudio.framework */,
+				978198C71B43DDB80034E0F9 /* CFNetwork.framework */,
+				978198C51B43DDB20034E0F9 /* Accelerate.framework */,
+				978198C31B43DDAB0034E0F9 /* QuartzCore.framework */,
+				978198C11B43DDA50034E0F9 /* OpenGLES.framework */,
+				978198BF1B43DD960034E0F9 /* MobileCoreServices.framework */,
+				978198BD1B43DD8F0034E0F9 /* AVFoundation.framework */,
+				978198BB1B43DD880034E0F9 /* MediaPlayer.framework */,
 				970AA1791B42B16D0059448F /* NightKiss */,
 				970AA1961B42B16D0059448F /* NightKissTests */,
 				970AA1781B42B16D0059448F /* Products */,
@@ -114,6 +244,7 @@
 		970AA1791B42B16D0059448F /* NightKiss */ = {
 			isa = PBXGroup;
 			children = (
+				978198D31B43DE3F0034E0F9 /* Helper */,
 				970AA1C21B42C4180059448F /* Cells */,
 				970AA1BB1B42BD890059448F /* Images */,
 				970AA1A31B42B2810059448F /* OpenSources */,
@@ -168,6 +299,8 @@
 		970AA1A31B42B2810059448F /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				978198801B43DD520034E0F9 /* DouAudioStreamer */,
+				9781986C1B43D3960034E0F9 /* EGOImage */,
 				970AA1A41B42B2970059448F /* RESideMenu */,
 			);
 			name = OpenSources;
@@ -201,8 +334,117 @@
 			children = (
 				970AA1C31B42C4470059448F /* ArticleTableViewCell.h */,
 				970AA1C41B42C4470059448F /* ArticleTableViewCell.m */,
+				978198661B43CFCA0034E0F9 /* PicTableViewCell.h */,
+				978198671B43CFCA0034E0F9 /* PicTableViewCell.m */,
+				978198691B43D1B10034E0F9 /* MusicTableViewCell.h */,
+				9781986A1B43D1B10034E0F9 /* MusicTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		9781986C1B43D3960034E0F9 /* EGOImage */ = {
+			isa = PBXGroup;
+			children = (
+				9781986D1B43D3960034E0F9 /* EGOCache */,
+				978198701B43D3960034E0F9 /* EGOImageButton */,
+				978198731B43D3960034E0F9 /* EGOImageLoader */,
+				978198781B43D3960034E0F9 /* EGOImageView */,
+			);
+			path = EGOImage;
+			sourceTree = "<group>";
+		};
+		9781986D1B43D3960034E0F9 /* EGOCache */ = {
+			isa = PBXGroup;
+			children = (
+				9781986E1B43D3960034E0F9 /* EGOCache.h */,
+				9781986F1B43D3960034E0F9 /* EGOCache.m */,
+			);
+			path = EGOCache;
+			sourceTree = "<group>";
+		};
+		978198701B43D3960034E0F9 /* EGOImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				978198711B43D3960034E0F9 /* EGOImageButton.h */,
+				978198721B43D3960034E0F9 /* EGOImageButton.m */,
+			);
+			path = EGOImageButton;
+			sourceTree = "<group>";
+		};
+		978198731B43D3960034E0F9 /* EGOImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				978198741B43D3960034E0F9 /* EGOImageLoadConnection.h */,
+				978198751B43D3960034E0F9 /* EGOImageLoadConnection.m */,
+				978198761B43D3960034E0F9 /* EGOImageLoader.h */,
+				978198771B43D3960034E0F9 /* EGOImageLoader.m */,
+			);
+			path = EGOImageLoader;
+			sourceTree = "<group>";
+		};
+		978198781B43D3960034E0F9 /* EGOImageView */ = {
+			isa = PBXGroup;
+			children = (
+				978198791B43D3960034E0F9 /* EGOImageView.h */,
+				9781987A1B43D3960034E0F9 /* EGOImageView.m */,
+			);
+			path = EGOImageView;
+			sourceTree = "<group>";
+		};
+		978198801B43DD520034E0F9 /* DouAudioStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				978198811B43DD520034E0F9 /* DOUAudioAnalyzer+Default.h */,
+				978198821B43DD520034E0F9 /* DOUAudioAnalyzer+Default.m */,
+				978198831B43DD520034E0F9 /* DOUAudioAnalyzer.h */,
+				978198841B43DD520034E0F9 /* DOUAudioAnalyzer.m */,
+				978198851B43DD520034E0F9 /* DOUAudioAnalyzer_Private.h */,
+				978198861B43DD520034E0F9 /* DOUAudioBase.h */,
+				978198871B43DD520034E0F9 /* DOUAudioDecoder.h */,
+				978198881B43DD520034E0F9 /* DOUAudioDecoder.m */,
+				978198891B43DD520034E0F9 /* DOUAudioEventLoop.h */,
+				9781988A1B43DD520034E0F9 /* DOUAudioEventLoop.m */,
+				9781988B1B43DD520034E0F9 /* DOUAudioFile.h */,
+				9781988C1B43DD520034E0F9 /* DOUAudioFilePreprocessor.h */,
+				9781988D1B43DD520034E0F9 /* DOUAudioFilePreprocessor.m */,
+				9781988E1B43DD520034E0F9 /* DOUAudioFileProvider.h */,
+				9781988F1B43DD520034E0F9 /* DOUAudioFileProvider.m */,
+				978198901B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.h */,
+				978198911B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.m */,
+				978198921B43DD520034E0F9 /* DOUAudioLPCM.h */,
+				978198931B43DD520034E0F9 /* DOUAudioLPCM.m */,
+				978198941B43DD520034E0F9 /* DOUAudioPlaybackItem.h */,
+				978198951B43DD520034E0F9 /* DOUAudioPlaybackItem.m */,
+				978198961B43DD520034E0F9 /* DOUAudioRenderer.h */,
+				978198971B43DD520034E0F9 /* DOUAudioRenderer.m */,
+				978198981B43DD520034E0F9 /* DOUAudioSpatialAnalyzer.h */,
+				978198991B43DD520034E0F9 /* DOUAudioSpatialAnalyzer.m */,
+				9781989A1B43DD520034E0F9 /* DOUAudioStreamer+Options.h */,
+				9781989B1B43DD520034E0F9 /* DOUAudioStreamer+Options.m */,
+				9781989C1B43DD520034E0F9 /* DOUAudioStreamer.h */,
+				9781989D1B43DD520034E0F9 /* DOUAudioStreamer.m */,
+				9781989E1B43DD520034E0F9 /* DOUAudioStreamer_Private.h */,
+				9781989F1B43DD520034E0F9 /* DOUAudioVisualizer.h */,
+				978198A01B43DD520034E0F9 /* DOUAudioVisualizer.m */,
+				978198A11B43DD520034E0F9 /* DOUEAGLView.h */,
+				978198A21B43DD520034E0F9 /* DOUEAGLView.m */,
+				978198A31B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.h */,
+				978198A41B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.m */,
+				978198A51B43DD520034E0F9 /* DOUSimpleHTTPRequest.h */,
+				978198A61B43DD520034E0F9 /* DOUSimpleHTTPRequest.m */,
+				978198A71B43DD520034E0F9 /* NSData+DOUMappedFile.h */,
+				978198A81B43DD520034E0F9 /* NSData+DOUMappedFile.m */,
+			);
+			path = DouAudioStreamer;
+			sourceTree = "<group>";
+		};
+		978198D31B43DE3F0034E0F9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				978198D41B43DE4C0034E0F9 /* Track.h */,
+				978198D51B43DE4C0034E0F9 /* Track.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,18 +550,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9781987F1B43D3960034E0F9 /* EGOImageView.m in Sources */,
 				970AA1801B42B16D0059448F /* AppDelegate.m in Sources */,
+				978198B01B43DD520034E0F9 /* DOUAudioLPCM.m in Sources */,
+				978198B21B43DD520034E0F9 /* DOUAudioRenderer.m in Sources */,
 				970AA1B31B42B32C0059448F /* MenuViewController.m in Sources */,
+				9781987E1B43D3960034E0F9 /* EGOImageLoader.m in Sources */,
+				978198BA1B43DD520034E0F9 /* NSData+DOUMappedFile.m in Sources */,
+				978198AC1B43DD520034E0F9 /* DOUAudioEventLoop.m in Sources */,
 				970AA1BA1B42BB950059448F /* BaseViewController.m in Sources */,
+				9781986B1B43D1B10034E0F9 /* MusicTableViewCell.m in Sources */,
 				970AA1AB1B42B2970059448F /* RECommonFunctions.m in Sources */,
+				978198B61B43DD520034E0F9 /* DOUAudioVisualizer.m in Sources */,
+				978198B51B43DD520034E0F9 /* DOUAudioStreamer.m in Sources */,
+				9781987C1B43D3960034E0F9 /* EGOImageButton.m in Sources */,
+				978198AA1B43DD520034E0F9 /* DOUAudioAnalyzer.m in Sources */,
 				970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */,
+				978198B81B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
 				970AA1B01B42B2F40059448F /* RootViewController.m in Sources */,
+				978198B11B43DD520034E0F9 /* DOUAudioPlaybackItem.m in Sources */,
 				970AA17D1B42B16D0059448F /* main.m in Sources */,
+				978198B41B43DD520034E0F9 /* DOUAudioStreamer+Options.m in Sources */,
 				970AA1861B42B16D0059448F /* ViewController.m in Sources */,
+				978198B71B43DD520034E0F9 /* DOUEAGLView.m in Sources */,
 				970AA1AC1B42B2970059448F /* RESideMenu.m in Sources */,
+				978198B31B43DD520034E0F9 /* DOUAudioSpatialAnalyzer.m in Sources */,
+				978198B91B43DD520034E0F9 /* DOUSimpleHTTPRequest.m in Sources */,
+				978198A91B43DD520034E0F9 /* DOUAudioAnalyzer+Default.m in Sources */,
+				978198D81B43DE4C0034E0F9 /* Track.m in Sources */,
 				970AA1AD1B42B2970059448F /* UIViewController+RESideMenu.m in Sources */,
 				970AA1831B42B16D0059448F /* NightKiss.xcdatamodeld in Sources */,
+				978198AE1B43DD520034E0F9 /* DOUAudioFileProvider.m in Sources */,
 				970AA1B71B42B9F10059448F /* SettingViewController.m in Sources */,
+				978198AB1B43DD520034E0F9 /* DOUAudioDecoder.m in Sources */,
+				9781987D1B43D3960034E0F9 /* EGOImageLoadConnection.m in Sources */,
+				978198681B43CFCA0034E0F9 /* PicTableViewCell.m in Sources */,
+				978198AD1B43DD520034E0F9 /* DOUAudioFilePreprocessor.m in Sources */,
+				978198AF1B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.m in Sources */,
+				9781987B1B43D3960034E0F9 /* EGOCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
