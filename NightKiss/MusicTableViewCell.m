@@ -247,6 +247,17 @@
         
         _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(_timerAction:) userInfo:nil repeats:YES];
 //        [self.sliderV setValue:[DOUAudioStreamer volume]];
+        
+        CABasicAnimation* rotationAnimation;
+        rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+        [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        rotationAnimation.duration = 15;
+        rotationAnimation.repeatCount = 1000;//你可以设置到最大的整数值
+        rotationAnimation.cumulative = NO;
+        rotationAnimation.removedOnCompletion = NO;
+        rotationAnimation.fillMode = kCAFillModeForwards;
+        [self.albumV.layer addAnimation:rotationAnimation forKey:@"Rotation"];
     }
     else{
         if ([_streamer status] == DOUAudioStreamerPaused ||
