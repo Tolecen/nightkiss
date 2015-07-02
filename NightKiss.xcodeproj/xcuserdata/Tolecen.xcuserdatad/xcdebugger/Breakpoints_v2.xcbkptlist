@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NightKiss/MusicTableViewCell.m"
-            timestampString = "457506109.209926"
+            timestampString = "457513160.912725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "-_updateBufferingStatus"
             landmarkType = "5">
          </BreakpointContent>

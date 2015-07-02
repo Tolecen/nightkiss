@@ -88,6 +88,7 @@
         
         
         [self.artDict setObject:self.theTrack.title forKey:MPMediaItemPropertyAlbumTitle];
+        [self.artDict setObject:self.theTrack.title forKey:MPMediaItemPropertyTitle];
         [self.artDict setObject:self.theTrack.artist forKey:MPMediaItemPropertyArtist];
         [self.artDict setObject:[NSNumber numberWithFloat:[_streamer duration]] forKey:MPMediaItemPropertyPlaybackDuration];
         [self.artDict setObject:[NSNumber numberWithFloat:[_streamer currentTime]] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
