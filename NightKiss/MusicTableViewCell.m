@@ -9,6 +9,7 @@
 #import "MusicTableViewCell.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "RootViewController.h"
+#include <CommonCrypto/CommonDigest.h>
 @implementation MusicTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -122,21 +123,40 @@
     }
     else
     {
-        Track *track = self.theTrack;
-  
         
+        NSString *filename = [NSString stringWithFormat:@"douas-%@DONE", [self makeSHA256ForAudioFileURL:self.theTrack.audioFileURL]];
+        NSString * localPath = [NSTemporaryDirectory() stringByAppendingPathComponent:filename];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:localPath]) {
+            self.theTrack.audioFileURL = [NSURL fileURLWithPath:localPath];
+        }
+ 
+        Track *track = self.theTrack;
         _streamer = [DOUAudioStreamer streamerWithAudioFile:track];
         [_streamer addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:kStatusKVOKey];
         [_streamer addObserver:self forKeyPath:@"duration" options:NSKeyValueObservingOptionNew context:kDurationKVOKey];
         [_streamer addObserver:self forKeyPath:@"bufferingRatio" options:NSKeyValueObservingOptionNew context:kBufferingRatioKVOKey];
         
-        [RootViewController sharedRootViewController].currentStreamer = _streamer;
+        [RootViewController sharedRootViewController].currentPlayCell = self;
         
         [_streamer play];
         
         [self _updateBufferingStatus];
-        [self _setupHintForStreamer];
+//        [self _setupHintForStreamer];预加载下一首，详细看原Sample
     }
+}
+
+- (NSString *)makeSHA256ForAudioFileURL:(NSURL *)audioFileURL
+{
+    NSString *string = [audioFileURL absoluteString];
+    unsigned char hash[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256([string UTF8String], (CC_LONG)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], hash);
+    
+    NSMutableString *result = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
+    for (size_t i = 0; i < CC_SHA256_DIGEST_LENGTH; ++i) {
+        [result appendFormat:@"%02x", hash[i]];
+    }
+    
+    return result;
 }
 
 - (void)_setupHintForStreamer
@@ -146,7 +166,7 @@
 //        nextIndex = 0;
 //    }
     
-    [DOUAudioStreamer setHintWithAudioFile:self.theTrack];
+//    [DOUAudioStreamer setHintWithAudioFile:self.theTrack];
 }
 
 - (void)_timerAction:(id)timer
@@ -202,7 +222,17 @@
 //    [_miscLabel setText:[NSString stringWithFormat:@"Received %.2f/%.2f MB (%.2f %%), Speed %.2f MB/s", (double)[_streamer receivedLength] / 1024 / 1024, (double)[_streamer expectedLength] / 1024 / 1024, [_streamer bufferingRatio] * 100.0, (double)[_streamer downloadSpeed] / 1024 / 1024]];
     NSLog(@"%@",[NSString stringWithFormat:@"Received %.2f/%.2f MB (%.2f %%), Speed %.2f MB/s", (double)[_streamer receivedLength] / 1024 / 1024, (double)[_streamer expectedLength] / 1024 / 1024, [_streamer bufferingRatio] * 100.0, (double)[_streamer downloadSpeed] / 1024 / 1024]);
     if ([_streamer bufferingRatio] >= 1.0) {
-        NSLog(@"sha256: %@", [_streamer sha256]);
+        NSLog(@"sha256: %@", [_streamer cachedPath]);
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[_streamer cachedPath]]&&![self.theTrack.audioFileURL isFileURL]) {
+            NSData * data = [NSData dataWithContentsOfFile:[_streamer cachedPath]];
+            NSString *filename = [NSString stringWithFormat:@"douas-%@DONE", [self makeSHA256ForAudioFileURL:self.theTrack.audioFileURL]];
+            NSString * localPath = [NSTemporaryDirectory() stringByAppendingPathComponent:filename];
+            [data writeToFile:localPath atomically:YES];
+            NSError * error = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:[_streamer cachedPath] error:&error];
+            NSLog(@"transfer it");
+        }
+
     }
 }
 
@@ -253,7 +283,7 @@
         rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         rotationAnimation.duration = 15;
-        rotationAnimation.repeatCount = 1000;//你可以设置到最大的整数值
+        rotationAnimation.repeatCount = MAXFLOAT;//你可以设置到最大的整数值
         rotationAnimation.cumulative = NO;
         rotationAnimation.removedOnCompletion = NO;
         rotationAnimation.fillMode = kCAFillModeForwards;
@@ -263,11 +293,33 @@
         if ([_streamer status] == DOUAudioStreamerPaused ||
             [_streamer status] == DOUAudioStreamerIdle) {
             [_streamer play];
+            
+            [self resumeAlbumRotation];
         }
         else {
             [_streamer pause];
+            
+            [self pauseAlbumRotation];
+
         }
     }
+}
+
+-(void)pauseAlbumRotation
+{
+    CFTimeInterval pausedTime = [self.albumV.layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    self.albumV.layer.speed = 0.0;
+    self.albumV.layer.timeOffset = pausedTime;
+}
+
+-(void)resumeAlbumRotation
+{
+    CFTimeInterval pausedTime = [self.albumV.layer timeOffset];
+    self.albumV.layer.speed = 1.0;
+    self.albumV.layer.timeOffset = 0.0;
+    self.albumV.layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [self.albumV.layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    self.albumV.layer.beginTime = timeSincePause;
 }
 
 

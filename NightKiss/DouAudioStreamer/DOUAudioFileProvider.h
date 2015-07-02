@@ -23,6 +23,7 @@ typedef void (^DOUAudioFileProviderEventBlock)(void);
 
 + (instancetype)fileProviderWithAudioFile:(id <DOUAudioFile>)audioFile;
 + (void)setHintWithAudioFile:(id <DOUAudioFile>)audioFile;
++ (NSString *)_sha256ForAudioFileURL:(NSURL *)audioFileURL;
 
 @property (nonatomic, readonly) id <DOUAudioFile> audioFile;
 @property (nonatomic, copy) DOUAudioFileProviderEventBlock eventBlock;

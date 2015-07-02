@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
 #import "DOUAudioStreamer.h"
+#import "MusicTableViewCell.h"
 @interface RootViewController : UIViewController
 @property (nonatomic,assign)UIViewController * currentViewController;
 @property (nonatomic,retain)RESideMenu * sideMenu;
 @property (nonatomic,strong)UINavigationController * mainNavi;
-@property (nonatomic,strong)DOUAudioStreamer * currentStreamer;
+@property (nonatomic,strong)MusicTableViewCell * currentPlayCell;
 + (RootViewController*)sharedRootViewController;
 
 @end

@@ -59,13 +59,13 @@
                 break;
                 
             case UIEventSubtypeRemoteControlPlay:
-                [[RootViewController sharedRootViewController].currentStreamer play];
+                [[RootViewController sharedRootViewController].currentPlayCell _actionPlayPause:nil];
 //                [self playAndStopSong:self.playButton];
                 break;
                 
             case UIEventSubtypeRemoteControlPause:{
                 NSLog(@"pause");
-                [[RootViewController sharedRootViewController].currentStreamer pause];
+                [[RootViewController sharedRootViewController].currentPlayCell _actionPlayPause:nil];
 //                [self playAndStopSong:self.playButton];
             }
                 break;

@@ -57,6 +57,8 @@
         [self.currentTrack setTitle:@"千千阙歌"];
         self.currentTrack.albumUrlStr = @"http://i2.sinaimg.cn/ent/x/2008-09-10/56225667ced245ba4910aa375b6c4df5.jpg";
         [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
+        
+//        [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/buyouyu.mp3"]];
     }
     [self.tableview reloadData];
 }

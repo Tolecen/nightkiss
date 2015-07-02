@@ -11,6 +11,7 @@
 #import "Track.h"
 #import "DOUAudioStreamer.h"
 #import "DOUAudioVisualizer.h"
+#import "DOUAudioFileProvider.h"
 
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
@@ -32,5 +33,8 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 @property (nonatomic,strong) UIButton * playBtn;
 @property (nonatomic,strong) Track * theTrack;
 @property (nonatomic,strong) NSMutableDictionary * artDict;
+
+
+- (void)_actionPlayPause:(id)sender;
 
 @end

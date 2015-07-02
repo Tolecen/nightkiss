@@ -246,6 +246,7 @@ static BOOL gLastProviderIsFinished = NO;
     _failed = YES;
   }
   else {
+      NSLog(@"done");
     _requestCompleted = YES;
     [_mappedData dou_synchronizeMappedFile];
   }
@@ -263,6 +264,7 @@ static BOOL gLastProviderIsFinished = NO;
     _sha256 = [result copy];
   }
 
+    
   if (gHintFile != nil &&
       gHintProvider == nil) {
     gHintProvider = [[[self class] alloc] _initWithAudioFile:gHintFile];
@@ -283,6 +285,7 @@ static BOOL gLastProviderIsFinished = NO;
   _cachedPath = [[self class] _cachedPathForAudioFileURL:_audioFileURL];
   _cachedURL = [NSURL fileURLWithPath:_cachedPath];
 
+    NSLog(@"receiveResponse,path:%@",_cachedPath);
   [[NSFileManager defaultManager] createFileAtPath:_cachedPath contents:nil attributes:nil];
   [[NSFileHandle fileHandleForWritingAtPath:_cachedPath] truncateFileAtOffset:_expectedLength];
 
@@ -293,6 +296,7 @@ static BOOL gLastProviderIsFinished = NO;
 
 - (void)_requestDidReceiveData:(NSData *)data
 {
+    NSLog(@"receivedata");
   if (_mappedData == nil) {
     return;
   }
