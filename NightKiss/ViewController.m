@@ -101,6 +101,7 @@
             cell = [[MusicTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
 //            cell.delegate = self;
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (self.currentTrack) {
             cell.theTrack = self.currentTrack;
         }
