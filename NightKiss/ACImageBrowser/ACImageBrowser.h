@@ -20,6 +20,8 @@
 
 @property (nonatomic) BOOL                          fullscreenEnable;
 
+@property (nonatomic,strong) UIPageControl * pageControl;
+
 
 - (id)initWithImagesURLArray:(NSMutableArray *)imagesURLArray;
 

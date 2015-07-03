@@ -7,6 +7,7 @@
 #import <UIKit/UIKit.h>
 
 #import "SDWebImageOperation.h"
+#import "SDPieLoopProgressView.h"
 
 @class ACImageBrowser;
 
@@ -20,7 +21,7 @@
 
 @property (nonatomic, weak) id <SDWebImageOperation>        webImageOperation;
 
-@property (nonatomic, strong) UIProgressView                *progressView;
+@property (nonatomic, strong) SDPieLoopProgressView                *progressView;
 
 @property (nonatomic) BOOL                                  isLoaded;
 

@@ -94,6 +94,8 @@
 		978881FA1B46D0A000F21C26 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881E11B46D0A000F21C26 /* UIImageView+HighlightedWebCache.m */; };
 		978881FB1B46D0A000F21C26 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881E31B46D0A000F21C26 /* UIImageView+WebCache.m */; };
 		978881FC1B46D0A000F21C26 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881E51B46D0A000F21C26 /* UIView+WebCacheOperation.m */; };
+		978882021B46D6B700F21C26 /* SDBaseProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881FF1B46D6B700F21C26 /* SDBaseProgressView.m */; };
+		978882031B46D6B700F21C26 /* SDPieLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 978882011B46D6B700F21C26 /* SDPieLoopProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +267,10 @@
 		978881E31B46D0A000F21C26 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		978881E41B46D0A000F21C26 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		978881E51B46D0A000F21C26 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		978881FE1B46D6B700F21C26 /* SDBaseProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBaseProgressView.h; sourceTree = "<group>"; };
+		978881FF1B46D6B700F21C26 /* SDBaseProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBaseProgressView.m; sourceTree = "<group>"; };
+		978882001B46D6B700F21C26 /* SDPieLoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPieLoopProgressView.h; sourceTree = "<group>"; };
+		978882011B46D6B700F21C26 /* SDPieLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPieLoopProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +393,7 @@
 		970AA1A31B42B2810059448F /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				978881FD1B46D6B700F21C26 /* SDProgressView */,
 				978881B51B46D0A000F21C26 /* ACImageBrowser */,
 				978881761B46B30A00F21C26 /* TFHpple */,
 				975017F41B4685760048DF2E /* JTSlideShadowAnimation */,
@@ -638,6 +645,17 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		978881FD1B46D6B700F21C26 /* SDProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				978881FE1B46D6B700F21C26 /* SDBaseProgressView.h */,
+				978881FF1B46D6B700F21C26 /* SDBaseProgressView.m */,
+				978882001B46D6B700F21C26 /* SDPieLoopProgressView.h */,
+				978882011B46D6B700F21C26 /* SDPieLoopProgressView.m */,
+			);
+			path = SDProgressView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -795,6 +813,7 @@
 				978881F51B46D0A000F21C26 /* SDWebImagePrefetcher.m in Sources */,
 				978881E91B46D0A000F21C26 /* ACZoomableImageScrollView.m in Sources */,
 				970AA1831B42B16D0059448F /* NightKiss.xcdatamodeld in Sources */,
+				978882031B46D6B700F21C26 /* SDPieLoopProgressView.m in Sources */,
 				978198AE1B43DD520034E0F9 /* DOUAudioFileProvider.m in Sources */,
 				970AA1B71B42B9F10059448F /* SettingViewController.m in Sources */,
 				978198AB1B43DD520034E0F9 /* DOUAudioDecoder.m in Sources */,
@@ -808,6 +827,7 @@
 				978881F71B46D0A000F21C26 /* UIImage+GIF.m in Sources */,
 				978198AF1B43DD520034E0F9 /* DOUAudioFrequencyAnalyzer.m in Sources */,
 				9781987B1B43D3960034E0F9 /* EGOCache.m in Sources */,
+				978882021B46D6B700F21C26 /* SDBaseProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -237,13 +237,13 @@
     [self addSubview:self.imageView];
     
     //-- progress view
-    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectZero];
+    self.progressView = [[SDPieLoopProgressView alloc] initWithFrame:CGRectZero];
     
-    self.progressView.autoresizingMask =
-    UIViewAutoresizingFlexibleTopMargin
-    | UIViewAutoresizingFlexibleRightMargin
-    | UIViewAutoresizingFlexibleBottomMargin
-    | UIViewAutoresizingFlexibleLeftMargin;
+//    self.progressView.autoresizingMask =
+//    UIViewAutoresizingFlexibleTopMargin
+//    | UIViewAutoresizingFlexibleRightMargin
+//    | UIViewAutoresizingFlexibleBottomMargin
+//    | UIViewAutoresizingFlexibleLeftMargin;
     
     self.progressView.userInteractionEnabled = NO;
     [self addSubview:self.progressView];
@@ -259,15 +259,15 @@
     //CGPoint centerPoint = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
     //[self fitImageViewFrameByImageSize:self.imageView.image.size centerPoint:centerPoint];
     
-    CGFloat progressView_margin = 36.0;
-    CGFloat progressView_w = self.bounds.size.width - progressView_margin * 2;
-    CGFloat progressView_h = 2.0;
-    CGFloat progressView_x = progressView_margin;
-    CGFloat progressView_y = (self.bounds.size.height - progressView_h) / 2;
-    self.progressView.frame = CGRectMake(progressView_x,
-                                         progressView_y,
-                                         progressView_w,
-                                         progressView_h);
+//    CGFloat progressView_margin = 36.0;
+//    CGFloat progressView_w = self.bounds.size.width - progressView_margin * 2;
+//    CGFloat progressView_h = 2.0;
+//    CGFloat progressView_x = progressView_margin;
+//    CGFloat progressView_y = (self.bounds.size.height - progressView_h) / 2;
+    self.progressView.frame = CGRectMake(self.center.x-35,
+                                         self.center.y-35,
+                                         70,
+                                         70);
     
     
     if (self.imageBrowser.isFullscreen) {

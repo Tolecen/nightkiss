@@ -226,6 +226,18 @@ static NSString *ACImageBrowserCellItemIdentifier               = @"ACImageBrows
     [self createSubviews];
     [self addCloseButton];
     [self addFullscreenModeNotificationObserver];
+    
+    if (self.imagesURLArray.count>1) {
+        self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, ScreenHeight-30, ScreenWidth, 20)];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+        self.pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:150/255.0 alpha:1];
+        [self.view addSubview:self.pageControl];
+        self.pageControl.numberOfPages=self.imagesURLArray.count;
+        //设置当前页,为第一张，索引为零
+        self.pageControl.currentPage=self.currentPage;
+    }
+
+    
 }
 
 - (void)createSubviews {
@@ -307,6 +319,7 @@ static NSString *ACImageBrowserCellItemIdentifier               = @"ACImageBrows
 }
 -(void)scrollViewDidEndDecelerating:(nonnull UIScrollView *)scrollView
 {
+    self.pageControl.currentPage = self.currentPage;
     NSLog(@"current index : %d",(int)_currentPage);
 }
 
