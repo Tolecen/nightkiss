@@ -26,7 +26,7 @@
     
     self.rowHeight = NormalCellHeight;
     
-    self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(10, 20, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
+    self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(10, ScreenHeight, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
 //    self.tableview.rowHeight = 200;
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
@@ -45,6 +45,9 @@
     
     self.tableview.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     
+    
+    //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
+    [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:1];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -59,8 +62,27 @@
         [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
         
 //        [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/buyouyu.mp3"]];
+        
+         [self.tableview reloadData];
     }
-    [self.tableview reloadData];
+   
+    
+
+}
+
+// After the content loaded, use this method.
+-(void)appearTheTable
+{
+    [UIView animateWithDuration:0.6
+                          delay:0.0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:1.0
+                        options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.tableview setFrame:CGRectMake(10, 20, ScreenWidth-20, ScreenHeight-20)];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 -(void)setAudioStreamer
