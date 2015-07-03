@@ -33,6 +33,7 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 @property (nonatomic,strong) UIButton * playBtn;
 @property (nonatomic,strong) Track * theTrack;
 @property (nonatomic,strong) NSMutableDictionary * artDict;
+@property (nonatomic,strong) UIActivityIndicatorView * loadingIndicaor;
 
 
 - (void)_actionPlayPause:(id)sender;

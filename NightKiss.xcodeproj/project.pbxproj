@@ -26,6 +26,9 @@
 		970AA1C11B42C2080059448F /* tvbottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1BF1B42C2080059448F /* tvbottom.png */; };
 		970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1C41B42C4470059448F /* ArticleTableViewCell.m */; };
 		970AA1C71B42C6B10059448F /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1C61B42C6B10059448F /* test.html */; };
+		975017F21B4665210048DF2E /* pause_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 975017F01B4665210048DF2E /* pause_btn.png */; };
+		975017F31B4665210048DF2E /* play_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 975017F11B4665210048DF2E /* play_btn.png */; };
+		975017F71B4685760048DF2E /* JTSlideShadowAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 975017F61B4685760048DF2E /* JTSlideShadowAnimation.m */; };
 		978198681B43CFCA0034E0F9 /* PicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 978198671B43CFCA0034E0F9 /* PicTableViewCell.m */; };
 		9781986B1B43D1B10034E0F9 /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781986A1B43D1B10034E0F9 /* MusicTableViewCell.m */; };
 		9781987B1B43D3960034E0F9 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9781986F1B43D3960034E0F9 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -111,6 +114,10 @@
 		970AA1C31B42C4470059448F /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		970AA1C41B42C4470059448F /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		970AA1C61B42C6B10059448F /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		975017F01B4665210048DF2E /* pause_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_btn.png; sourceTree = "<group>"; };
+		975017F11B4665210048DF2E /* play_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_btn.png; sourceTree = "<group>"; };
+		975017F51B4685760048DF2E /* JTSlideShadowAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSlideShadowAnimation.h; sourceTree = "<group>"; };
+		975017F61B4685760048DF2E /* JTSlideShadowAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSlideShadowAnimation.m; sourceTree = "<group>"; };
 		978198661B43CFCA0034E0F9 /* PicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicTableViewCell.h; sourceTree = "<group>"; };
 		978198671B43CFCA0034E0F9 /* PicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicTableViewCell.m; sourceTree = "<group>"; };
 		978198691B43D1B10034E0F9 /* MusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTableViewCell.h; sourceTree = "<group>"; };
@@ -299,6 +306,7 @@
 		970AA1A31B42B2810059448F /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				975017F41B4685760048DF2E /* JTSlideShadowAnimation */,
 				978198801B43DD520034E0F9 /* DouAudioStreamer */,
 				9781986C1B43D3960034E0F9 /* EGOImage */,
 				970AA1A41B42B2970059448F /* RESideMenu */,
@@ -322,6 +330,8 @@
 		970AA1BB1B42BD890059448F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				975017F01B4665210048DF2E /* pause_btn.png */,
+				975017F11B4665210048DF2E /* play_btn.png */,
 				970AA1BE1B42C2080059448F /* tvtop.png */,
 				970AA1BF1B42C2080059448F /* tvbottom.png */,
 				970AA1BC1B42BD9B0059448F /* background.png */,
@@ -340,6 +350,15 @@
 				9781986A1B43D1B10034E0F9 /* MusicTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		975017F41B4685760048DF2E /* JTSlideShadowAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				975017F51B4685760048DF2E /* JTSlideShadowAnimation.h */,
+				975017F61B4685760048DF2E /* JTSlideShadowAnimation.m */,
+			);
+			path = JTSlideShadowAnimation;
 			sourceTree = "<group>";
 		};
 		9781986C1B43D3960034E0F9 /* EGOImage */ = {
@@ -527,6 +546,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975017F31B4665210048DF2E /* play_btn.png in Resources */,
+				975017F21B4665210048DF2E /* pause_btn.png in Resources */,
 				970AA18E1B42B16D0059448F /* LaunchScreen.xib in Resources */,
 				970AA1C11B42C2080059448F /* tvbottom.png in Resources */,
 				970AA1C71B42C6B10059448F /* test.html in Resources */,
@@ -563,6 +584,7 @@
 				970AA1AB1B42B2970059448F /* RECommonFunctions.m in Sources */,
 				978198B61B43DD520034E0F9 /* DOUAudioVisualizer.m in Sources */,
 				978198B51B43DD520034E0F9 /* DOUAudioStreamer.m in Sources */,
+				975017F71B4685760048DF2E /* JTSlideShadowAnimation.m in Sources */,
 				9781987C1B43D3960034E0F9 /* EGOImageButton.m in Sources */,
 				978198AA1B43DD520034E0F9 /* DOUAudioAnalyzer.m in Sources */,
 				970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */,

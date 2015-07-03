@@ -24,12 +24,26 @@
         [self.contentView addSubview:self.timeL];
         self.timeL.text = @"Apr. 12, 2015";
         
+        _audioVisualizer = [[DOUAudioVisualizer alloc] initWithFrame:CGRectMake(0.0, NormalCellHeight-0-120, ScreenWidth-20, 120)];
+        [_audioVisualizer setBackgroundColor:[UIColor clearColor]];
+        [self.contentView addSubview:_audioVisualizer];
+//        _audioVisualizer.layer.cornerRadius = 20;
+//        _audioVisualizer.layer.masksToBounds = YES;
+        
         self.playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.playBtn.backgroundColor = [UIColor redColor];
+//        self.playBtn.backgroundColor = [UIColor redColor];
+        [self.playBtn setBackgroundImage:[UIImage imageNamed:@"play_btn"] forState:UIControlStateNormal];
         [self.playBtn setFrame:CGRectMake((ScreenWidth-20-60)/2, NormalCellHeight-30-60, 60, 60)];
         [self.contentView addSubview:self.playBtn];
         [self.playBtn addTarget:self action:@selector(_actionPlayPause:) forControlEvents:UIControlEventTouchUpInside];
-        [self.playBtn setTitle:@"play" forState:UIControlStateNormal];
+//        [self.playBtn setTitle:@"play" forState:UIControlStateNormal];
+        
+        
+        self.loadingIndicaor = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [self.loadingIndicaor setFrame:CGRectMake(0, 0, 30, 30)];
+        [self.loadingIndicaor setCenter:CGPointMake(30, 30)];
+        [self.playBtn addSubview:self.loadingIndicaor];
+        self.loadingIndicaor.hidden = YES;
         
         
         self.sliderV = [[UISlider alloc] initWithFrame:CGRectMake(20.0, self.playBtn.frame.origin.y-40, ScreenWidth-20-40, 20.0)];
@@ -66,7 +80,7 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    
+//    [self.loadingIndicaor startAnimating];
     if (self.theTrack) {
         [self.musicNameL setText:self.theTrack.title];
         [self.artistNameL setText:self.theTrack.artist];
@@ -93,7 +107,7 @@
         [self.artDict setObject:[NSNumber numberWithFloat:[_streamer duration]] forKey:MPMediaItemPropertyPlaybackDuration];
         [self.artDict setObject:[NSNumber numberWithFloat:[_streamer currentTime]] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
         
-        if (self.albumV.image) {
+        if (self.albumV.image&&![self.artDict objectForKey:MPMediaItemPropertyArtwork]) {
             MPMediaItemArtwork * mArt = [[MPMediaItemArtwork alloc] initWithImage:self.albumV.image];
             [self.artDict setObject:mArt forKey:MPMediaItemPropertyArtwork];
         }
@@ -186,17 +200,23 @@
     switch ([_streamer status]) {
         case DOUAudioStreamerPlaying:
 //            [_statusLabel setText:@"playing"];
-            [self.playBtn setTitle:@"Pause" forState:UIControlStateNormal];
+            [self.playBtn setBackgroundImage:[UIImage imageNamed:@"pause_btn"] forState:UIControlStateNormal];
+            [self hideLoadingIndicator];
+//            [self.playBtn setTitle:@"Pause" forState:UIControlStateNormal];
             break;
             
         case DOUAudioStreamerPaused:
 //            [_statusLabel setText:@"paused"];
-            [self.playBtn setTitle:@"Play" forState:UIControlStateNormal];
+            [self.playBtn setBackgroundImage:[UIImage imageNamed:@"play_btn"] forState:UIControlStateNormal];
+            [self hideLoadingIndicator];
+//            [self.playBtn setTitle:@"Play" forState:UIControlStateNormal];
             break;
             
         case DOUAudioStreamerIdle:
 //            [_statusLabel setText:@"idle"];
-            [self.playBtn setTitle:@"Play" forState:UIControlStateNormal];
+            [self.playBtn setBackgroundImage:[UIImage imageNamed:@"play_btn"] forState:UIControlStateNormal];
+            [self hideLoadingIndicator];
+//            [self.playBtn setTitle:@"Play" forState:UIControlStateNormal];
             break;
             
         case DOUAudioStreamerFinished:
@@ -207,7 +227,9 @@
             
         case DOUAudioStreamerBuffering:
 //            [_statusLabel setText:@"buffering"];
-            [self.playBtn setTitle:@"buffering" forState:UIControlStateNormal];
+            [self.playBtn setBackgroundImage:nil forState:UIControlStateNormal];
+            [self showLadingIndicator];
+//            [self.playBtn setTitle:@"buffering" forState:UIControlStateNormal];
             break;
             
         case DOUAudioStreamerError:
@@ -215,6 +237,20 @@
             NSLog(@"error");
             break;
     }
+}
+
+-(void)showLadingIndicator
+{
+    self.loadingIndicaor.hidden = NO;
+    if (![self.loadingIndicaor isAnimating]) {
+        [self.loadingIndicaor startAnimating];
+    }
+}
+
+-(void)hideLoadingIndicator
+{
+    [self.loadingIndicaor stopAnimating];
+    self.loadingIndicaor.hidden = YES;
 }
 
 
