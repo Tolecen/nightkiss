@@ -37,7 +37,7 @@
         [self.loadingIndicaor setFrame:CGRectMake(0, 0, 30, 30)];
         [self.loadingIndicaor setCenter:CGPointMake(30, 30)];
         [self.playBtn addSubview:self.loadingIndicaor];
-        self.playBtn.hidden = YES;
+        self.loadingIndicaor.hidden = YES;
         
         
         self.sliderV = [[UISlider alloc] initWithFrame:CGRectMake(20.0, self.playBtn.frame.origin.y-40, ScreenWidth-20-40, 20.0)];
