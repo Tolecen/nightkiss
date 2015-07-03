@@ -24,8 +24,8 @@
         [self.contentView addSubview:self.timeL];
         self.timeL.text = @"Apr. 12, 2015";
         
-        _audioVisualizer = [[DOUAudioVisualizer alloc] initWithFrame:CGRectMake(0.0, NormalCellHeight-30-120, ScreenWidth-20, 120)];
-        [_audioVisualizer setBackgroundColor:[UIColor whiteColor]];
+        _audioVisualizer = [[DOUAudioVisualizer alloc] initWithFrame:CGRectMake(0.0, NormalCellHeight-0-120, ScreenWidth-20, 120)];
+        [_audioVisualizer setBackgroundColor:[UIColor clearColor]];
         [self.contentView addSubview:_audioVisualizer];
 //        _audioVisualizer.layer.cornerRadius = 20;
 //        _audioVisualizer.layer.masksToBounds = YES;
@@ -107,7 +107,7 @@
         [self.artDict setObject:[NSNumber numberWithFloat:[_streamer duration]] forKey:MPMediaItemPropertyPlaybackDuration];
         [self.artDict setObject:[NSNumber numberWithFloat:[_streamer currentTime]] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
         
-        if (self.albumV.image) {
+        if (self.albumV.image&&![self.artDict objectForKey:MPMediaItemPropertyArtwork]) {
             MPMediaItemArtwork * mArt = [[MPMediaItemArtwork alloc] initWithImage:self.albumV.image];
             [self.artDict setObject:mArt forKey:MPMediaItemPropertyArtwork];
         }

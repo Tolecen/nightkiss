@@ -27,7 +27,6 @@ typedef NS_ENUM(NSUInteger, DOUAudioVisualizerInterpolationType) {
 
 @property (nonatomic, assign) NSUInteger stepCount;
 @property (nonatomic, assign) DOUAudioVisualizerInterpolationType interpolationType;
-
 @end
 
 #endif /* TARGET_OS_IPHONE */
