@@ -10,9 +10,12 @@
 #import "ArticleTableViewCell.h"
 #import "MusicTableViewCell.h"
 #import "Track.h"
-
-@interface ViewController ()<ResetCellHeightDelegate>
+#import "TFHpple.h"
+#import "UIImageView+WebCache.h"
+#import "ACImageBrowser.h"
+@interface ViewController ()<ArticleCellDelegate,ACImageBrowserDelegate>
 {
+    
 }
 @property (nonatomic,strong)Track * currentTrack;
 @end
@@ -22,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mediaType = 1;
+    self.mediaType = 0;
     
     self.rowHeight = NormalCellHeight;
     
@@ -56,8 +59,10 @@
     [btv setImage:[UIImage imageNamed:@"tvbottom"]];
     self.tableview.tableFooterView = btv;
     
-    self.tableview.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
+    self.tableview.contentInset = UIEdgeInsetsMake(20, 0, 20, 0);
     
+    
+    [self.shadowAnimation start];
     
     //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
     [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:3];
@@ -67,18 +72,25 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (!self.currentTrack) {
-        self.currentTrack = [[Track alloc] init];
-        [self.currentTrack setArtist:@"陈慧娴"];
-        [self.currentTrack setTitle:@"千千阙歌"];
-        self.currentTrack.albumUrlStr = @"http://i2.sinaimg.cn/ent/x/2008-09-10/56225667ced245ba4910aa375b6c4df5.jpg";
-        [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
-        
-//        [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/buyouyu.mp3"]];
-        
-         [self.tableview reloadData];
+    if (self.mediaType==0) {
+//        self.contentLoaded = YES;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
+        self.articleHTMLStr = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        [self.tableview reloadData];
     }
-    [self.shadowAnimation start];
+    else if (self.mediaType==1){
+        if (!self.currentTrack) {
+            self.currentTrack = [[Track alloc] init];
+            [self.currentTrack setArtist:@"陈慧娴"];
+            [self.currentTrack setTitle:@"千千阙歌"];
+            self.currentTrack.albumUrlStr = @"http://i2.sinaimg.cn/ent/x/2008-09-10/56225667ced245ba4910aa375b6c4df5.jpg";
+            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
+            
+    //        [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/buyouyu.mp3"]];
+            
+             [self.tableview reloadData];
+        }
+    }
    
     
 
@@ -127,7 +139,9 @@
             cell = [[ArticleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
             cell.delegate = self;
         }
-        
+        if (self.articleHTMLStr) {
+            cell.htmlStr = self.articleHTMLStr;
+        }
         return cell;
     }
     else
@@ -145,6 +159,24 @@
         return cell;
     }
 
+}
+-(void)articleClickedPicIndex:(int)index withArray:(NSArray *)array
+{
+//    NSLog(@"clicked index %d , array:%@",index,array);
+    NSMutableArray * photosURLArray = [NSMutableArray array];
+    for (NSString *str in array) {
+        NSURL *url = [NSURL URLWithString:str];
+        [photosURLArray addObject:url];
+    }
+    
+    ACImageBrowser *browser = [[ACImageBrowser alloc] initWithImagesURLArray:photosURLArray];
+    browser.delegate = self;
+    //browser.fullscreenEnable = NO;
+    [browser setPageIndex:index];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+    nc.navigationBarHidden = YES;
+    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nc animated:YES completion:nil];
 }
 //- (void) viewWillAppear:(BOOL)animated
 //{

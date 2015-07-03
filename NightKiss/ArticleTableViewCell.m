@@ -7,7 +7,7 @@
 //
 
 #import "ArticleTableViewCell.h"
-
+//#import "TFHpple.h"
 @implementation ArticleTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -24,20 +24,70 @@
         self.webview.delegate = self;
         self.webview.scrollView.scrollEnabled = NO;
         [self.contentView addSubview:self.webview];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
-        NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        [self.webview loadHTMLString:html baseURL:nil];
+        
+        self.picArray = [NSMutableArray array];
+        
         
     }
     return self;
 }
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    if (self.htmlStr&&!self.loaded&&![self.webview isLoading]) {
+        [self startLoadContent];
+    }
+}
+-(void)startLoadContent
+{
+   
+    [self.webview loadHTMLString:self.htmlStr baseURL:nil];
+}
+-(BOOL)webView:(nonnull UIWebView *)webView shouldStartLoadWithRequest:(nonnull NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+//    NSLog(@"request:%@",request);
+    if (self.loaded) {
+        NSString * str = request.URL.absoluteString;
+        BOOL havePic = NO;
+        for (int i = 0; i<self.picArray.count; i++) {
+            if ([str isEqualToString:self.picArray[i]]) {
+//                j = i;
+                havePic = YES;
+                if ([self.delegate respondsToSelector:@selector(articleClickedPicIndex:withArray:)]) {
+                    [self.delegate articleClickedPicIndex:i withArray:self.picArray];
+                }
+//                NSLog(@"catch%d",i);
+            }
+        }
+        if (!havePic) {
+            return YES;
+        }
+        else
+            return NO;
+    }
+    return YES;
+}
 - (void)webViewDidFinishLoad:(UIWebView *)myWebView
 {
     self.webview.frame = CGRectMake(self.webview.frame.origin.x, self.webview.frame.origin.y, myWebView.frame.size.width, myWebView.scrollView.contentSize.height);
-    NSLog(@"webviewheight:%f,contentheight:%f",self.webview.frame.size.height,myWebView.scrollView.contentSize.height);
+//    NSLog(@"webviewheight:%f,contentheight:%f",self.webview.frame.size.height,myWebView.scrollView.contentSize.height);
     if ([self.delegate respondsToSelector:@selector(resetCellHeightWithContentSizeH:)]) {
         [self.delegate resetCellHeightWithContentSizeH:myWebView.scrollView.contentSize.height];
     }
+    self.loaded = YES;
+    NSData * data = [self.htmlStr dataUsingEncoding:NSUTF8StringEncoding];
+    doc = [TFHpple hppleWithHTMLData:data encoding:@"UTF-8"];
+    NSArray * items = [doc searchWithXPathQuery:@"//img"];
+//    NSLog(@"items:%@",items);
+    for (TFHppleElement *item in items)
+    {
+        NSString *value = item.attributes[@"src"];
+        [self.picArray addObject:value];
+//        NSLog(@"attri:%@",value);
+        
+    }
+    
+
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

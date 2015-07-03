@@ -13,6 +13,8 @@
 @property (nonatomic,strong)UITableView * tableview;
 @property (nonatomic,assign)CGFloat rowHeight;
 @property (nonatomic,assign)int mediaType;
+@property (nonatomic,assign)BOOL contentLoaded;
+@property (nonatomic,strong)NSString * articleHTMLStr;
 @property (strong, nonatomic) JTSlideShadowAnimation *shadowAnimation;
 @end
 
