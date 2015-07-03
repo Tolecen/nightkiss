@@ -26,6 +26,19 @@
     
     self.rowHeight = NormalCellHeight;
     
+    UILabel * loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (ScreenHeight-30)/2, ScreenWidth, 30)];
+    loadingLabel.backgroundColor = [UIColor clearColor];
+    loadingLabel.textColor = [UIColor whiteColor];
+    loadingLabel.textAlignment = NSTextAlignmentCenter;
+    loadingLabel.text = @"NightKiss is on road...";
+    [self.view addSubview:loadingLabel];
+    
+    self.shadowAnimation = [JTSlideShadowAnimation new];
+    self.shadowAnimation.shadowForegroundColor = [UIColor colorWithRed:255/255.0f green:97/255.0f blue:0 alpha:0.3];
+    self.shadowAnimation.shadowBackgroundColor = [UIColor whiteColor];
+    self.shadowAnimation.animatedView = loadingLabel;
+    self.shadowAnimation.shadowWidth = 80.;
+    
     self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(10, ScreenHeight, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
 //    self.tableview.rowHeight = 200;
     self.tableview.delegate = self;
@@ -47,7 +60,7 @@
     
     
     //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
-    [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:1];
+    [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:3];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -65,6 +78,7 @@
         
          [self.tableview reloadData];
     }
+    [self.shadowAnimation start];
    
     
 
@@ -73,6 +87,7 @@
 // After the content loaded, use this method.
 -(void)appearTheTable
 {
+    [self.shadowAnimation stop];
     [UIView animateWithDuration:0.6
                           delay:0.0
          usingSpringWithDamping:0.6
