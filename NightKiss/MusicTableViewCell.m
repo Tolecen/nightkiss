@@ -24,6 +24,12 @@
         [self.contentView addSubview:self.timeL];
         self.timeL.text = @"Apr. 12, 2015";
         
+        _audioVisualizer = [[DOUAudioVisualizer alloc] initWithFrame:CGRectMake(0.0, NormalCellHeight-30-120, ScreenWidth-20, 120)];
+        [_audioVisualizer setBackgroundColor:[UIColor whiteColor]];
+        [self.contentView addSubview:_audioVisualizer];
+//        _audioVisualizer.layer.cornerRadius = 20;
+//        _audioVisualizer.layer.masksToBounds = YES;
+        
         self.playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //        self.playBtn.backgroundColor = [UIColor redColor];
         [self.playBtn setBackgroundImage:[UIImage imageNamed:@"play_btn"] forState:UIControlStateNormal];
