@@ -29,6 +29,17 @@
     [super viewDidLoad];
     
     self.mediaType = 0;
+    NSString * s = [[NSUserDefaults standardUserDefaults] objectForKey:@"mediaType"];
+    if (s) {
+        if ([s intValue]==0) {
+            self.mediaType = 1;
+        }
+        else
+            self.mediaType = 0;
+    }
+ 
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.mediaType] forKey:@"mediaType"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     self.rowHeight = NormalCellHeight;
     
