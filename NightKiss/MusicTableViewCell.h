@@ -12,7 +12,7 @@
 #import "DOUAudioStreamer.h"
 #import "DOUAudioVisualizer.h"
 #import "DOUAudioFileProvider.h"
-
+#import "MediaCellDelegate.h"
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
 static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
@@ -34,6 +34,8 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 @property (nonatomic,strong) Track * theTrack;
 @property (nonatomic,strong) NSMutableDictionary * artDict;
 @property (nonatomic,strong) UIActivityIndicatorView * loadingIndicaor;
+@property (nonatomic,strong) UIButton * moreBtn;
+@property (nonatomic,assign) id <MediaCellDelegate> delegate;
 
 
 - (void)_actionPlayPause:(id)sender;

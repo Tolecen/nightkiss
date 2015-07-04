@@ -38,6 +38,13 @@
         [self.playBtn addTarget:self action:@selector(_actionPlayPause:) forControlEvents:UIControlEventTouchUpInside];
 //        [self.playBtn setTitle:@"play" forState:UIControlStateNormal];
         
+        self.moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        //        self.playBtn.backgroundColor = [UIColor redColor];
+        [self.moreBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_more2"] forState:UIControlStateNormal];
+        [self.moreBtn setFrame:CGRectMake(ScreenWidth-40-42, NormalCellHeight-30-60+9, 42, 42)];
+        [self.contentView addSubview:self.moreBtn];
+        [self.moreBtn addTarget:self action:@selector(moreBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        
         
         self.loadingIndicaor = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [self.loadingIndicaor setFrame:CGRectMake(0, 0, 30, 30)];
@@ -376,6 +383,12 @@
     [DOUAudioStreamer setVolume:[self.sliderV value]];
 }
 
+-(void)moreBtnClicked:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(moreBtnClicked:)]) {
+        [self.delegate moreBtnClicked:sender];
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

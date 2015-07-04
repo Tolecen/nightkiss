@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9708F0051B4774B4004277F6 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9708F0021B4774B4004277F6 /* ProgressHUD.bundle */; };
+		9708F0061B4774B4004277F6 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9708F0041B4774B4004277F6 /* ProgressHUD.m */; };
+		9708F0081B4780C6004277F6 /* bottom_btn_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 9708F0071B4780C6004277F6 /* bottom_btn_more.png */; };
+		9708F00A1B4783CE004277F6 /* bottom_btn_more2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9708F0091B4783CE004277F6 /* bottom_btn_more2.png */; };
+		9708F00F1B478BE0004277F6 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9708F00E1B478BE0004277F6 /* FXBlurView.m */; };
+		9708F0121B478BE9004277F6 /* FSMaskControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9708F0111B478BE9004277F6 /* FSMaskControl.m */; };
+		9708F0151B47A191004277F6 /* MoreOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9708F0141B47A191004277F6 /* MoreOperationView.m */; };
 		970AA17D1B42B16D0059448F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA17C1B42B16D0059448F /* main.m */; };
 		970AA1801B42B16D0059448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA17F1B42B16D0059448F /* AppDelegate.m */; };
 		970AA1831B42B16D0059448F /* NightKiss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1811B42B16D0059448F /* NightKiss.xcdatamodeld */; };
@@ -109,6 +116,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9708F0021B4774B4004277F6 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		9708F0031B4774B4004277F6 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		9708F0041B4774B4004277F6 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		9708F0071B4780C6004277F6 /* bottom_btn_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_btn_more.png; sourceTree = "<group>"; };
+		9708F0091B4783CE004277F6 /* bottom_btn_more2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_btn_more2.png; sourceTree = "<group>"; };
+		9708F00B1B4789E3004277F6 /* MediaCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaCellDelegate.h; sourceTree = "<group>"; };
+		9708F00D1B478BE0004277F6 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		9708F00E1B478BE0004277F6 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		9708F0101B478BE9004277F6 /* FSMaskControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMaskControl.h; sourceTree = "<group>"; };
+		9708F0111B478BE9004277F6 /* FSMaskControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMaskControl.m; sourceTree = "<group>"; };
+		9708F0131B47A191004277F6 /* MoreOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreOperationView.h; sourceTree = "<group>"; };
+		9708F0141B47A191004277F6 /* MoreOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreOperationView.m; sourceTree = "<group>"; };
 		970AA1771B42B16D0059448F /* NightKiss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightKiss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970AA17B1B42B16D0059448F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970AA17C1B42B16D0059448F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -304,6 +323,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9708F0011B4774B4004277F6 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				9708F0021B4774B4004277F6 /* ProgressHUD.bundle */,
+				9708F0031B4774B4004277F6 /* ProgressHUD.h */,
+				9708F0041B4774B4004277F6 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		9708F00C1B478BE0004277F6 /* BlurView */ = {
+			isa = PBXGroup;
+			children = (
+				9708F00D1B478BE0004277F6 /* FXBlurView.h */,
+				9708F00E1B478BE0004277F6 /* FXBlurView.m */,
+			);
+			path = BlurView;
+			sourceTree = "<group>";
+		};
 		970AA16E1B42B16D0059448F = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +390,10 @@
 				970AA1B21B42B32C0059448F /* MenuViewController.m */,
 				970AA1B51B42B9F10059448F /* SettingViewController.h */,
 				970AA1B61B42B9F10059448F /* SettingViewController.m */,
+				9708F0101B478BE9004277F6 /* FSMaskControl.h */,
+				9708F0111B478BE9004277F6 /* FSMaskControl.m */,
+				9708F0131B47A191004277F6 /* MoreOperationView.h */,
+				9708F0141B47A191004277F6 /* MoreOperationView.m */,
 				970AA1841B42B16D0059448F /* ViewController.h */,
 				970AA1851B42B16D0059448F /* ViewController.m */,
 				970AA18A1B42B16D0059448F /* Images.xcassets */,
@@ -393,6 +435,8 @@
 		970AA1A31B42B2810059448F /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				9708F00C1B478BE0004277F6 /* BlurView */,
+				9708F0011B4774B4004277F6 /* ProgressHUD */,
 				978881FD1B46D6B700F21C26 /* SDProgressView */,
 				978881B51B46D0A000F21C26 /* ACImageBrowser */,
 				978881761B46B30A00F21C26 /* TFHpple */,
@@ -420,6 +464,8 @@
 		970AA1BB1B42BD890059448F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9708F0071B4780C6004277F6 /* bottom_btn_more.png */,
+				9708F0091B4783CE004277F6 /* bottom_btn_more2.png */,
 				975017F01B4665210048DF2E /* pause_btn.png */,
 				975017F11B4665210048DF2E /* play_btn.png */,
 				970AA1BE1B42C2080059448F /* tvtop.png */,
@@ -552,6 +598,7 @@
 			children = (
 				978198D41B43DE4C0034E0F9 /* Track.h */,
 				978198D51B43DE4C0034E0F9 /* Track.m */,
+				9708F00B1B4789E3004277F6 /* MediaCellDelegate.h */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -737,13 +784,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				978881EB1B46D0A000F21C26 /* error_x@2x.png in Resources */,
+				9708F0081B4780C6004277F6 /* bottom_btn_more.png in Resources */,
 				975017F31B4665210048DF2E /* play_btn.png in Resources */,
+				9708F00A1B4783CE004277F6 /* bottom_btn_more2.png in Resources */,
 				975017F21B4665210048DF2E /* pause_btn.png in Resources */,
 				970AA18E1B42B16D0059448F /* LaunchScreen.xib in Resources */,
 				970AA1C11B42C2080059448F /* tvbottom.png in Resources */,
 				978881EC1B46D0A000F21C26 /* LICENSE in Resources */,
 				970AA1C71B42C6B10059448F /* test.html in Resources */,
 				970AA1BD1B42BD9B0059448F /* background.png in Resources */,
+				9708F0051B4774B4004277F6 /* ProgressHUD.bundle in Resources */,
 				970AA1C01B42C2080059448F /* tvtop.png in Resources */,
 				978881EA1B46D0A000F21C26 /* error_x.png in Resources */,
 				970AA18B1B42B16D0059448F /* Images.xcassets in Resources */,
@@ -769,7 +819,9 @@
 				978198B01B43DD520034E0F9 /* DOUAudioLPCM.m in Sources */,
 				978198B21B43DD520034E0F9 /* DOUAudioRenderer.m in Sources */,
 				970AA1B31B42B32C0059448F /* MenuViewController.m in Sources */,
+				9708F00F1B478BE0004277F6 /* FXBlurView.m in Sources */,
 				9781987E1B43D3960034E0F9 /* EGOImageLoader.m in Sources */,
+				9708F0121B478BE9004277F6 /* FSMaskControl.m in Sources */,
 				978881F81B46D0A000F21C26 /* UIImage+MultiFormat.m in Sources */,
 				978198BA1B43DD520034E0F9 /* NSData+DOUMappedFile.m in Sources */,
 				978881F91B46D0A000F21C26 /* UIImage+WebP.m in Sources */,
@@ -787,10 +839,12 @@
 				975017F71B4685760048DF2E /* JTSlideShadowAnimation.m in Sources */,
 				9781987C1B43D3960034E0F9 /* EGOImageButton.m in Sources */,
 				9788817D1B46B30A00F21C26 /* TFHpple.m in Sources */,
+				9708F0151B47A191004277F6 /* MoreOperationView.m in Sources */,
 				978881F21B46D0A000F21C26 /* SDWebImageDownloader.m in Sources */,
 				978881F61B46D0A000F21C26 /* UIButton+WebCache.m in Sources */,
 				978198AA1B43DD520034E0F9 /* DOUAudioAnalyzer.m in Sources */,
 				970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */,
+				9708F0061B4774B4004277F6 /* ProgressHUD.m in Sources */,
 				978198B81B43DD520034E0F9 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
 				970AA1B01B42B2F40059448F /* RootViewController.m in Sources */,
 				978198B11B43DD520034E0F9 /* DOUAudioPlaybackItem.m in Sources */,

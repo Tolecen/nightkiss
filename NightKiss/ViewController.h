@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 #import "JTSlideShadowAnimation.h"
+#import "FSMaskControl.h"
+
 @interface ViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView * tableview;
 @property (nonatomic,assign)CGFloat rowHeight;
@@ -16,5 +18,8 @@
 @property (nonatomic,assign)BOOL contentLoaded;
 @property (nonatomic,strong)NSString * articleHTMLStr;
 @property (strong, nonatomic) JTSlideShadowAnimation *shadowAnimation;
+@property (strong, nonatomic) UIButton * moreBtn;
+@property (nonatomic, strong) FSMaskControl *maskControl;
+
 @end
 

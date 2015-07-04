@@ -26,28 +26,22 @@
         self.contentView.backgroundColor = [UIColor clearColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        self.iconView  = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth>320?10:5, 10, 25, 25)];
-        _iconView.center = CGPointMake(_iconView.center.x, self.contentView.center.y);
+        self.iconView  = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth/2-22-20-70)/2, 25, 70, 70)];
+//        _iconView.center = CGPointMake(_iconView.center.x, self.contentView.center.y);
+        self.iconView.backgroundColor = [UIColor grayColor];
+        self.iconView.layer.cornerRadius = 35;
+        self.iconView.layer.masksToBounds = YES;
         [self.contentView addSubview:_iconView];
+
         
-        self.notiImageV = [[UIImageView alloc] initWithFrame:CGRectMake(50, 8, 10, 10)];
-        [self.notiImageV setImage:[UIImage imageNamed:@"dotunread"]];
-        [self.contentView addSubview:self.notiImageV];
-        
-        self.xinFImageV = [[UIImageView alloc] initWithFrame:CGRectMake(48, 8, 24, 10)];
-        [self.xinFImageV setImage:[UIImage imageNamed:@"functionnew"]];
-        [self.contentView addSubview:self.xinFImageV];
-        
-        self.titleL = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth>320?50:45, 0, 150, 20)];
-        _titleL.center = CGPointMake(_titleL.center.x, _iconView.center.y);
-        _titleL.textColor = [UIColor grayColor];
-        _titleL.font = [UIFont boldSystemFontOfSize:15];
+        self.titleL = [[UILabel alloc]initWithFrame:CGRectMake(0, 95, ScreenWidth/2-22-20, 30)];
+//        _titleL.center = CGPointMake(_titleL.center.x, _iconView.center.y);
+        _titleL.textColor = [UIColor colorWithWhite:250/255.0f alpha:1];
+        _titleL.font = [UIFont systemFontOfSize:14];
+        _titleL.textAlignment = NSTextAlignmentCenter;
         _titleL.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:_titleL];
         self.backgroundColor = [UIColor clearColor];
-        for (UIView * view in self.subviews) {
-            view.backgroundColor = [UIColor clearColor];
-        }
     }
     return self;
 }
@@ -75,15 +69,15 @@
     // Do any additional setup after loading the view.
 
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+22, 0,self.view.frame.size.width/2-22, self.view.frame.size.height)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+22, (ScreenHeight-450)/2,self.view.frame.size.width/2-22-20, 450)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+//    _tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
     [self.view addSubview:_tableView];
     _tableView.backgroundColor = [UIColor clearColor];
-    self.titleArr = @[@"宠豆商城",@"M卡管理",@"会员礼包",@"互动吧",@"我的任务"];
-    self.iconArr = @[@"market",@"free",@"bag",@"interactionBar",@"mytask_icon"];
+    self.titleArr = @[@"往期晚安吻",@"我的收藏",@"设置"];
+    self.iconArr = @[@"market",@"free",@"bag"];
     
 }
 - (void)didReceiveMemoryWarning
@@ -119,7 +113,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 150;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

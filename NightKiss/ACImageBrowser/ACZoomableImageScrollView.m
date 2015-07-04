@@ -11,10 +11,10 @@
 #import "ACImageBrowserCell.h"
 
 #import "UIImageView+WebCache.h"
-
+#import "ProgressHUD.h"
 
 @interface ACZoomableImageScrollView ()
-<UIScrollViewDelegate, UIGestureRecognizerDelegate>
+<UIScrollViewDelegate, UIGestureRecognizerDelegate,UIActionSheetDelegate>
 
 @end
 
@@ -234,6 +234,11 @@
     [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
     [self addGestureRecognizer:singleTapGesture];
     
+    
+    UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGesture:)];
+    [self addGestureRecognizer:longPress];
+    
+    
     [self addSubview:self.imageView];
     
     //-- progress view
@@ -383,6 +388,34 @@
         
         [self.imageBrowser dismissViewControllerAnimated:YES completion:^{
             
+        }];
+    }
+}
+
+-(void)longPressGesture:(UILongPressGestureRecognizer *)longPress
+{
+    if (longPress.state == UIGestureRecognizerStateBegan) {
+//        NSLog(@"longPressed Began..");
+        UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"保存图片", nil];
+        [sheet showInView:self];
+
+    }
+    
+}
+-(void)actionSheet:(nonnull UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==0) {
+//        NSLog(@"1111");
+        [self.imageBrowser savePhotoToCameraRollProgress:^(CGFloat percent) {
+            [ProgressHUD show:@"保存中..."];
+        } success:^(BOOL success) {
+            if (success) {
+                [ProgressHUD showSuccess:@"已成功保存到相册"];
+            }
+            else
+            {
+                [ProgressHUD showError:@"保存失败"];
+            }
         }];
     }
 }

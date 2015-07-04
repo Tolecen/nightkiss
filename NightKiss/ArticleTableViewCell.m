@@ -81,7 +81,11 @@
 //    NSLog(@"items:%@",items);
     for (TFHppleElement *item in items)
     {
-        NSString *value = item.attributes[@"src"];
+        NSString * value = item.attributes[@"data-original"];
+        if (!value||(value&&value.length<1)) {
+            value = item.attributes[@"src"];
+        }
+//        NSString *
         [self.picArray addObject:value];
 //        NSLog(@"attri:%@",value);
         

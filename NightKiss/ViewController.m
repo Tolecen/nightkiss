@@ -13,11 +13,14 @@
 #import "TFHpple.h"
 #import "UIImageView+WebCache.h"
 #import "ACImageBrowser.h"
-@interface ViewController ()<ArticleCellDelegate,ACImageBrowserDelegate>
+#import "MediaCellDelegate.h"
+#import "MoreOperationView.h"
+@interface ViewController ()<ArticleCellDelegate,ACImageBrowserDelegate,MediaCellDelegate>
 {
-    
+    float lastOffsetY;
 }
 @property (nonatomic,strong)Track * currentTrack;
+@property (nonatomic,strong)MoreOperationView * moreView;
 @end
 
 @implementation ViewController
@@ -62,11 +65,24 @@
     self.tableview.contentInset = UIEdgeInsetsMake(20, 0, 20, 0);
     
     
+    
+    
     [self.shadowAnimation start];
+    
+    _moreView = [[MoreOperationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    __weak __typeof(self) wSelf = self;
+    [_moreView setDismissHandle:^(NSInteger index) {
+        NSLog(@"theIndex:%ld",(long)index);
+        [wSelf.maskControl dismissIndex:index];
+    }];
     
     //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
     [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:3];
     // Do any additional setup after loading the view, typically from a nib.
+}
+-(void)dismissAtIndex:(NSInteger)index
+{
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -84,9 +100,9 @@
             [self.currentTrack setArtist:@"陈慧娴"];
             [self.currentTrack setTitle:@"千千阙歌"];
             self.currentTrack.albumUrlStr = @"http://i2.sinaimg.cn/ent/x/2008-09-10/56225667ced245ba4910aa375b6c4df5.jpg";
-            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
+//            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
             
-    //        [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/buyouyu.mp3"]];
+            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/buyouyu.mp3"]];
             
              [self.tableview reloadData];
         }
@@ -108,7 +124,16 @@
                      animations:^{
                          [self.tableview setFrame:CGRectMake(10, 20, ScreenWidth-20, ScreenHeight-20)];
                      } completion:^(BOOL finished) {
-                         
+                         if (self.mediaType==0) {
+                             if (!self.moreBtn) {
+                                 self.moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+                                 [self.moreBtn setFrame:CGRectMake(ScreenWidth-20-42, ScreenHeight-20-10-42, 42, 42)];
+                                 [self.moreBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_more"] forState:UIControlStateNormal];
+                                 [self.view addSubview:self.moreBtn];
+                                 self.moreBtn.tag = 1;
+                                 [self.moreBtn addTarget:self action:@selector(moreBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+                             }
+                         }
                      }];
 }
 
@@ -150,7 +175,7 @@
         MusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
         if (cell == nil) {
             cell = [[MusicTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
-//            cell.delegate = self;
+            cell.delegate = self;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (self.currentTrack) {
@@ -159,6 +184,51 @@
         return cell;
     }
 
+}
+-(void)scrollViewWillBeginDragging:(nonnull UIScrollView *)scrollView
+{
+    lastOffsetY = scrollView.contentOffset.y;
+}
+-(void)scrollViewDidScroll:(nonnull UIScrollView *)scrollView
+{
+    if (self.mediaType==0) {
+        NSLog(@"contentoffset:%f",scrollView.contentOffset.y);
+        if (scrollView.contentOffset.y>lastOffsetY&&self.moreBtn.tag==1) {
+            self.moreBtn.tag = 2;
+            self.moreBtn.hidden = NO;
+            self.moreBtn.alpha = 1;
+            [UIView animateWithDuration:0.5 animations:^{
+                self.moreBtn.alpha = 0;
+            } completion:^(BOOL finished) {
+                self.moreBtn.hidden = YES;
+            }];
+            
+        }
+        else if(scrollView.contentOffset.y<lastOffsetY&&self.moreBtn.tag==2){
+            self.moreBtn.tag = 1;
+            self.moreBtn.hidden = NO;
+            self.moreBtn.alpha = 0;
+            [UIView animateWithDuration:0.5 animations:^{
+                self.moreBtn.alpha = 1;
+            } completion:^(BOOL finished) {
+                self.moreBtn.hidden = NO;
+            }];
+        }
+        
+            
+    }
+}
+-(void)moreBtnClicked:(id)sender
+{
+    _maskControl = [[FSMaskControl alloc] initWithContainerView:self.moreView];
+    
+    _maskControl.didDismissHandler = ^ {
+        [UIView animateWithDuration:.5f animations:^{
+            
+        }];
+    };
+    [_maskControl showInTargetView];
+    
 }
 -(void)articleClickedPicIndex:(int)index withArray:(NSArray *)array
 {
