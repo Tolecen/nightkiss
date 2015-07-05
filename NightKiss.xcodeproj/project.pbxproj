@@ -33,6 +33,7 @@
 		970AA1C11B42C2080059448F /* tvbottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1BF1B42C2080059448F /* tvbottom.png */; };
 		970AA1C51B42C4470059448F /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970AA1C41B42C4470059448F /* ArticleTableViewCell.m */; };
 		970AA1C71B42C6B10059448F /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 970AA1C61B42C6B10059448F /* test.html */; };
+		97170CB91B48FF5F0079F327 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 97170CB81B48FF5F0079F327 /* libxml2.dylib */; };
 		975017F21B4665210048DF2E /* pause_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 975017F01B4665210048DF2E /* pause_btn.png */; };
 		975017F31B4665210048DF2E /* play_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 975017F11B4665210048DF2E /* play_btn.png */; };
 		975017F71B4685760048DF2E /* JTSlideShadowAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 975017F61B4685760048DF2E /* JTSlideShadowAnimation.m */; };
@@ -77,7 +78,6 @@
 		9788817D1B46B30A00F21C26 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881781B46B30A00F21C26 /* TFHpple.m */; };
 		9788817E1B46B30A00F21C26 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9788817A1B46B30A00F21C26 /* TFHppleElement.m */; };
 		9788817F1B46B30A00F21C26 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9788817C1B46B30A00F21C26 /* XPathQuery.m */; };
-		978881831B46B43000F21C26 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 978881821B46B43000F21C26 /* libxml2.tbd */; };
 		978881E61B46D0A000F21C26 /* ACImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881B71B46D0A000F21C26 /* ACImageBrowser.m */; };
 		978881E71B46D0A000F21C26 /* ACImageBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881B91B46D0A000F21C26 /* ACImageBrowserCell.m */; };
 		978881E81B46D0A000F21C26 /* ACImageBrowserLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881BC1B46D0A000F21C26 /* ACImageBrowserLayout.m */; };
@@ -162,6 +162,7 @@
 		970AA1C31B42C4470059448F /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		970AA1C41B42C4470059448F /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		970AA1C61B42C6B10059448F /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		97170CB81B48FF5F0079F327 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		975017F01B4665210048DF2E /* pause_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_btn.png; sourceTree = "<group>"; };
 		975017F11B4665210048DF2E /* play_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_btn.png; sourceTree = "<group>"; };
 		975017F51B4685760048DF2E /* JTSlideShadowAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSlideShadowAnimation.h; sourceTree = "<group>"; };
@@ -240,7 +241,6 @@
 		9788817A1B46B30A00F21C26 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		9788817B1B46B30A00F21C26 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		9788817C1B46B30A00F21C26 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		978881821B46B43000F21C26 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		978881B61B46D0A000F21C26 /* ACImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACImageBrowser.h; sourceTree = "<group>"; };
 		978881B71B46D0A000F21C26 /* ACImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACImageBrowser.m; sourceTree = "<group>"; };
 		978881B81B46D0A000F21C26 /* ACImageBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACImageBrowserCell.h; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				978881831B46B43000F21C26 /* libxml2.tbd in Frameworks */,
+				97170CB91B48FF5F0079F327 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +345,7 @@
 		970AA16E1B42B16D0059448F = {
 			isa = PBXGroup;
 			children = (
-				978881821B46B43000F21C26 /* libxml2.tbd */,
+				97170CB81B48FF5F0079F327 /* libxml2.dylib */,
 				978198D11B43DDD80034E0F9 /* CoreGraphics.framework */,
 				978198CF1B43DDD20034E0F9 /* Foundation.framework */,
 				978198CD1B43DDCC0034E0F9 /* UIKit.framework */,
