@@ -90,7 +90,7 @@
     _menuViewControllerTransformation = CGAffineTransformMakeScale(1.5f, 1.5f);
     
     _scaleContentView = YES;
-    _scaleBackgroundImageView = YES;
+    _scaleBackgroundImageView = NO;
     _scaleMenuView = YES;
     _fadeMenuView = YES;
     
