@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-@interface SettingViewController : BaseViewController
-
+@interface SettingViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,strong) UITableView * settingTableV;
+@property (nonatomic,strong) NSArray * titleArray;
+@property (nonatomic,strong) UIButton * backBtn;
 @end

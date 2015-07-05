@@ -9,7 +9,7 @@
 #import "MenuViewController.h"
 #import "RootViewController.h"
 #import "SettingViewController.h"
-
+#import "CollectionViewController.h"
 @interface OtherCell : UITableViewCell
 @property (nonatomic,retain)UIImageView * notiImageV;
 @property (nonatomic,retain)UIImageView * xinFImageV;
@@ -118,9 +118,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UINavigationController *navigationController = [RootViewController sharedRootViewController].mainNavi;
+    
+    if (indexPath.row==2) {
         SettingViewController * settingV = [[SettingViewController alloc] init];
         [navigationController pushViewController:settingV animated:YES];
-        [[RootViewController sharedRootViewController].sideMenu hideMenuViewController];
+    }
+    else if(indexPath.row==0)
+    {
+        CollectionViewController * historyV = [[CollectionViewController alloc] init];
+        historyV.title = @"往期晚安吻";
+        [navigationController pushViewController:historyV animated:YES];
+
+    }
+    else if (indexPath.row==1){
+        CollectionViewController * historyV = [[CollectionViewController alloc] init];
+        historyV.title = @"我的收藏";
+        [navigationController pushViewController:historyV animated:YES];
+    }
+    
+    [[RootViewController sharedRootViewController].sideMenu hideMenuViewController];
 }
 
 /*

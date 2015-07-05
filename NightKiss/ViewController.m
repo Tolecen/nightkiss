@@ -108,18 +108,18 @@
     else if (self.mediaType==1){
         if (!self.currentTrack) {
             self.currentTrack = [[Track alloc] init];
-            [self.currentTrack setArtist:@"陈慧娴"];
-            [self.currentTrack setTitle:@"千千阙歌"];
-            self.currentTrack.albumUrlStr = @"http://i2.sinaimg.cn/ent/x/2008-09-10/56225667ced245ba4910aa375b6c4df5.jpg";
+            [self.currentTrack setArtist:@"久石譲"];
+            [self.currentTrack setTitle:@"Summer"];
+            self.currentTrack.albumUrlStr = @"http://7d9jfr.com1.z0.glb.clouddn.com/jiu82233.png?imageView2/2/w/500";
 //            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
             
-            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/buyouyu.mp3"]];
+            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/summerjiushir.mp3"]];
             
              [self.tableview reloadData];
         }
     }
    
-    
+    NSLog(@"dd%f,%f,%f",self.view.frame.size.width,ScreenWidth,ScreenHeight);
 
 }
 
@@ -228,6 +228,17 @@
         
             
     }
+}
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
+{
+    self.moreBtn.tag = 1;
+    self.moreBtn.hidden = NO;
+    self.moreBtn.alpha = 0;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.moreBtn.alpha = 1;
+    } completion:^(BOOL finished) {
+        self.moreBtn.hidden = NO;
+    }];
 }
 -(void)moreBtnClicked:(id)sender
 {
