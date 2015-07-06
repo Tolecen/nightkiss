@@ -21,7 +21,7 @@
     h.image = [UIImage imageNamed:@"background"];
     [self.view addSubview:h];
     
-    self.titleArray = [NSArray arrayWithObjects:@"设置",@"消息推送",@"关于我们",@"APP版本",@"意见反馈",@"清除缓存", nil];
+    self.titleArray = [NSArray arrayWithObjects:@"设置",@"消息推送",@"关于我们",@"APP版本",@"和我说点什么",@"清除缓存", nil];
     
     self.settingTableV = [[UITableView alloc] initWithFrame:CGRectMake(10, 0, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
     //    self.tableview.rowHeight = 200;

@@ -107,7 +107,8 @@
 		978DF7D01B493A3A00FD58A9 /* bottom_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 978DF7CF1B493A3A00FD58A9 /* bottom_btn_back.png */; };
 		978DF7D31B493C6A00FD58A9 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978DF7D21B493C6A00FD58A9 /* CollectionViewController.m */; };
 		978DF7D71B4950BE00FD58A9 /* bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 978DF7D61B4950BE00FD58A9 /* bottom_bar.png */; };
-		978DF7D91B495FAC00FD58A9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978DF7D81B495FAC00FD58A9 /* Default@2x.png */; };
+		978DF7D91B495FAC00FD58A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978DF7D81B495FAC00FD58A9 /* Default-568h@2x.png */; };
+		97E3BD031B4A7B4200392DDD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E3BD021B4A7B4200392DDD /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,7 +301,8 @@
 		978DF7D11B493C6A00FD58A9 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		978DF7D21B493C6A00FD58A9 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		978DF7D61B4950BE00FD58A9 /* bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar.png; sourceTree = "<group>"; };
-		978DF7D81B495FAC00FD58A9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		978DF7D81B495FAC00FD58A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		97E3BD021B4A7B4200392DDD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,7 +411,8 @@
 				9708F0141B47A191004277F6 /* MoreOperationView.m */,
 				970AA1841B42B16D0059448F /* ViewController.h */,
 				970AA1851B42B16D0059448F /* ViewController.m */,
-				978DF7D81B495FAC00FD58A9 /* Default@2x.png */,
+				97E3BD021B4A7B4200392DDD /* Default@2x.png */,
+				978DF7D81B495FAC00FD58A9 /* Default-568h@2x.png */,
 				970AA18A1B42B16D0059448F /* Images.xcassets */,
 				970AA18C1B42B16D0059448F /* LaunchScreen.xib */,
 				970AA1C61B42C6B10059448F /* test.html */,
@@ -812,10 +815,11 @@
 				978881EC1B46D0A000F21C26 /* LICENSE in Resources */,
 				970AA1C71B42C6B10059448F /* test.html in Resources */,
 				978DF7D01B493A3A00FD58A9 /* bottom_btn_back.png in Resources */,
-				978DF7D91B495FAC00FD58A9 /* Default@2x.png in Resources */,
+				978DF7D91B495FAC00FD58A9 /* Default-568h@2x.png in Resources */,
 				9708F0051B4774B4004277F6 /* ProgressHUD.bundle in Resources */,
 				978DF7D71B4950BE00FD58A9 /* bottom_bar.png in Resources */,
 				970AA1C01B42C2080059448F /* tvtop.png in Resources */,
+				97E3BD031B4A7B4200392DDD /* Default@2x.png in Resources */,
 				978881EA1B46D0A000F21C26 /* error_x.png in Resources */,
 				970AA18B1B42B16D0059448F /* Images.xcassets in Resources */,
 			);
@@ -954,8 +958,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zhongshan Zhang (4ZJV2KP3QN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhongshan Zhang (4ZJV2KP3QN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -979,7 +983,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "117bede2-0b4e-4e36-8ac2-8573f2f62a8c";
+				PROVISIONING_PROFILE = "afe590ba-a437-4744-aa42-34046ae0880b";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1001,8 +1005,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zhongshan Zhang (4ZJV2KP3QN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhongshan Zhang (4ZJV2KP3QN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1019,7 +1023,7 @@
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "117bede2-0b4e-4e36-8ac2-8573f2f62a8c";
+				PROVISIONING_PROFILE = "afe590ba-a437-4744-aa42-34046ae0880b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1029,9 +1033,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				INFOPLIST_FILE = NightKiss/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "afe590ba-a437-4744-aa42-34046ae0880b";
 			};
 			name = Debug;
 		};
@@ -1039,9 +1046,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				INFOPLIST_FILE = NightKiss/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "afe590ba-a437-4744-aa42-34046ae0880b";
 			};
 			name = Release;
 		};
@@ -1049,6 +1059,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1060,6 +1071,7 @@
 				INFOPLIST_FILE = NightKissTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "afe590ba-a437-4744-aa42-34046ae0880b";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightKiss.app/NightKiss";
 			};
 			name = Debug;
@@ -1068,6 +1080,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1075,6 +1088,7 @@
 				INFOPLIST_FILE = NightKissTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "afe590ba-a437-4744-aa42-34046ae0880b";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightKiss.app/NightKiss";
 			};
 			name = Release;
