@@ -89,7 +89,33 @@
     
     //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
     [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:3];
+    [self getTodayContent];
     // Do any additional setup after loading the view, typically from a nib.
+}
+-(void)getTodayContent
+{
+    [NetManager requestWithReqPath:@"/nightkiss/getAllMedias" Parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (self.mediaType==0) {
+            NSDictionary * dict = [responseObject objectForKey:@"medias"][1];
+            self.articleHTMLStr = [dict objectForKey:@"raw_text"];
+            [self.tableview reloadData];
+        }
+        else{
+            if (!self.currentTrack) {
+                self.currentTrack = [[Track alloc] init];
+                [self.currentTrack setArtist:@"久石譲"];
+                [self.currentTrack setTitle:@"Summer"];
+                self.currentTrack.albumUrlStr = @"http://7d9jfr.com1.z0.glb.clouddn.com/jiu82233.png?imageView2/2/w/500";
+                //            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
+                
+                [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/summerjiushir.mp3"]];
+                
+                [self.tableview reloadData];
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 -(void)dismissAtIndex:(NSInteger)index
 {
@@ -101,22 +127,22 @@
     [super viewDidAppear:animated];
     if (self.mediaType==0) {
 //        self.contentLoaded = YES;
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
-        self.articleHTMLStr = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        [self.tableview reloadData];
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
+//        self.articleHTMLStr = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//        [self.tableview reloadData];
     }
     else if (self.mediaType==1){
-        if (!self.currentTrack) {
-            self.currentTrack = [[Track alloc] init];
-            [self.currentTrack setArtist:@"久石譲"];
-            [self.currentTrack setTitle:@"Summer"];
-            self.currentTrack.albumUrlStr = @"http://7d9jfr.com1.z0.glb.clouddn.com/jiu82233.png?imageView2/2/w/500";
-//            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
-            
-            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/summerjiushir.mp3"]];
-            
-             [self.tableview reloadData];
-        }
+//        if (!self.currentTrack) {
+//            self.currentTrack = [[Track alloc] init];
+//            [self.currentTrack setArtist:@"久石譲"];
+//            [self.currentTrack setTitle:@"Summer"];
+//            self.currentTrack.albumUrlStr = @"http://7d9jfr.com1.z0.glb.clouddn.com/jiu82233.png?imageView2/2/w/500";
+////            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
+//            
+//            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/summerjiushir.mp3"]];
+//            
+//             [self.tableview reloadData];
+//        }
     }
    
     NSLog(@"dd%f,%f,%f",self.view.frame.size.width,ScreenWidth,ScreenHeight);

@@ -42,6 +42,7 @@
 {
    
     [self.webview loadHTMLString:self.htmlStr baseURL:nil];
+//    [self.webview loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://mengbaopai.com/"]]];
 }
 -(BOOL)webView:(nonnull UIWebView *)webView shouldStartLoadWithRequest:(nonnull NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
