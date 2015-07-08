@@ -68,7 +68,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:settingIdentifier];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    if (indexPath.row==0||indexPath.row==1) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    else
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     for (UIView * view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }

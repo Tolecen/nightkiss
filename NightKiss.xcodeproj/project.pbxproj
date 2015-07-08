@@ -131,6 +131,8 @@
 		97B188D31B4BA80300489ABB /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B188D21B4BA80300489ABB /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		97C52B621B4CC71100F0EF67 /* XLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C52B611B4CC71100F0EF67 /* XLProgressView.m */; };
 		97C52B651B4D05A200F0EF67 /* PicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C52B641B4D05A200F0EF67 /* PicInfo.m */; };
+		97C52B681B4D205300F0EF67 /* XLFlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C52B661B4D205300F0EF67 /* XLFlipView.m */; };
+		97C52B6B1B4D2A6400F0EF67 /* TextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C52B6A1B4D2A6400F0EF67 /* TextTableViewCell.m */; };
 		97E3BD031B4A7B4200392DDD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E3BD021B4A7B4200392DDD /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -374,6 +376,10 @@
 		97C52B611B4CC71100F0EF67 /* XLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLProgressView.m; sourceTree = "<group>"; };
 		97C52B631B4D05A200F0EF67 /* PicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicInfo.h; sourceTree = "<group>"; };
 		97C52B641B4D05A200F0EF67 /* PicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicInfo.m; sourceTree = "<group>"; };
+		97C52B661B4D205300F0EF67 /* XLFlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFlipView.m; sourceTree = "<group>"; };
+		97C52B671B4D205300F0EF67 /* XLFlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFlipView.h; sourceTree = "<group>"; };
+		97C52B691B4D2A6400F0EF67 /* TextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTableViewCell.h; sourceTree = "<group>"; };
+		97C52B6A1B4D2A6400F0EF67 /* TextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTableViewCell.m; sourceTree = "<group>"; };
 		97E3BD021B4A7B4200392DDD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -483,6 +489,8 @@
 				9708F0141B47A191004277F6 /* MoreOperationView.m */,
 				970AA1841B42B16D0059448F /* ViewController.h */,
 				970AA1851B42B16D0059448F /* ViewController.m */,
+				97C52B661B4D205300F0EF67 /* XLFlipView.m */,
+				97C52B671B4D205300F0EF67 /* XLFlipView.h */,
 				97E3BD021B4A7B4200392DDD /* Default@2x.png */,
 				978DF7D81B495FAC00FD58A9 /* Default-568h@2x.png */,
 				970AA18A1B42B16D0059448F /* Images.xcassets */,
@@ -580,6 +588,8 @@
 				978198671B43CFCA0034E0F9 /* PicTableViewCell.m */,
 				978198691B43D1B10034E0F9 /* MusicTableViewCell.h */,
 				9781986A1B43D1B10034E0F9 /* MusicTableViewCell.m */,
+				97C52B691B4D2A6400F0EF67 /* TextTableViewCell.h */,
+				97C52B6A1B4D2A6400F0EF67 /* TextTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1022,6 +1032,7 @@
 				970AA1AB1B42B2970059448F /* RECommonFunctions.m in Sources */,
 				978198B61B43DD520034E0F9 /* DOUAudioVisualizer.m in Sources */,
 				978881FA1B46D0A000F21C26 /* UIImageView+HighlightedWebCache.m in Sources */,
+				97C52B6B1B4D2A6400F0EF67 /* TextTableViewCell.m in Sources */,
 				97C52B621B4CC71100F0EF67 /* XLProgressView.m in Sources */,
 				978198B51B43DD520034E0F9 /* DOUAudioStreamer.m in Sources */,
 				975017F71B4685760048DF2E /* JTSlideShadowAnimation.m in Sources */,
@@ -1063,6 +1074,7 @@
 				978881F41B46D0A000F21C26 /* SDWebImageManager.m in Sources */,
 				970AA1AD1B42B2970059448F /* UIViewController+RESideMenu.m in Sources */,
 				978881F51B46D0A000F21C26 /* SDWebImagePrefetcher.m in Sources */,
+				97C52B681B4D205300F0EF67 /* XLFlipView.m in Sources */,
 				978881E91B46D0A000F21C26 /* ACZoomableImageScrollView.m in Sources */,
 				970AA1831B42B16D0059448F /* NightKiss.xcdatamodeld in Sources */,
 				97B188B41B4BA71600489ABB /* SBJSON.m in Sources */,

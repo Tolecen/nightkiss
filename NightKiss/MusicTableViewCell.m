@@ -80,10 +80,21 @@
         self.albumV.layer.masksToBounds = YES;
         self.albumV.backgroundColor = [UIColor colorWithWhite:200/255.0f alpha:1];
         [self.contentView addSubview:self.albumV];
+        
+        UIButton * g = [UIButton buttonWithType:UIButtonTypeCustom];
+        g.backgroundColor = [UIColor redColor];
+        [g setFrame:CGRectMake(ScreenWidth-20-40, 10, 40, 40)];
+        [self.contentView addSubview:g];
+        [g addTarget:self action:@selector(toTextView) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
-
+-(void)toTextView
+{
+    if ([self.delegate respondsToSelector:@selector(toTextView)]) {
+        [self.delegate toTextView];
+    }
+}
 -(void)layoutSubviews
 {
     [super layoutSubviews];

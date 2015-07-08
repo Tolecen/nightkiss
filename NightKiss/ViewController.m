@@ -10,6 +10,7 @@
 #import "ArticleTableViewCell.h"
 #import "MusicTableViewCell.h"
 #import "PicTableViewCell.h"
+#import "TextTableViewCell.h"
 #import "Track.h"
 #import "TFHpple.h"
 #import "UIImageView+WebCache.h"
@@ -17,6 +18,7 @@
 #import "MediaCellDelegate.h"
 #import "MoreOperationView.h"
 #import "PicInfo.h"
+#import "XLFlipView.h"
 @interface ViewController ()<ACImageBrowserDelegate,MediaCellDelegate>
 {
     float lastOffsetY;
@@ -24,6 +26,7 @@
 @property (nonatomic,strong)Track * currentTrack;
 @property (nonatomic,strong)PicInfo * currentPicInfo;
 @property (nonatomic,strong)MoreOperationView * moreView;
+@property (nonatomic,strong)XLFlipView * cms;
 @end
 
 @implementation ViewController
@@ -31,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mediaType = 2;
+    self.mediaType = 1;
 //    NSString * s = [[NSUserDefaults standardUserDefaults] objectForKey:@"mediaType"];
 //    if (s) {
 //        if ([s intValue]==0) {
@@ -63,24 +66,45 @@
     self.shadowAnimation.animatedView = loadingLabel;
     self.shadowAnimation.shadowWidth = 80.;
     
-    self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(10, ScreenHeight, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
+    self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(10, 20, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
 //    self.tableview.rowHeight = 200;
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     self.tableview.backgroundColor = [UIColor clearColor];
     self.tableview.backgroundView = nil;
     self.tableview.showsVerticalScrollIndicator = NO;
-    [self.view addSubview:self.tableview];
+//    [self.view addSubview:self.tableview];
+    
+    self.textTV = [[UITableView alloc] initWithFrame:CGRectMake(10, 20, ScreenWidth-20, ScreenHeight-20) style:UITableViewStylePlain];
+    //    self.tableview.rowHeight = 200;
+    self.textTV.delegate = self;
+    self.textTV.dataSource = self;
+    self.textTV.backgroundColor = [UIColor clearColor];
+    self.textTV.backgroundView = nil;
+    self.textTV.showsVerticalScrollIndicator = NO;
+//    [self.view addSubview:self.textTV];
+    
+    self.cms = [[XLFlipView alloc] initWithPrimaryView:self.tableview andSecondaryView:self.textTV inFrame:CGRectMake(0, ScreenHeight, ScreenWidth, ScreenHeight)];
+    [self.view addSubview:self.cms];
     
     UIImageView * topv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth-20, 30*(ScreenWidth-20)/732)];
     [topv setImage:[UIImage imageNamed:@"tvtop"]];
     self.tableview.tableHeaderView = topv;
     
+    UIImageView * topv2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth-20, 30*(ScreenWidth-20)/732)];
+    [topv2 setImage:[UIImage imageNamed:@"tvtop"]];
+    self.textTV.tableHeaderView = topv2;
+    
     UIImageView * btv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth-20, 30*(ScreenWidth-20)/732)];
     [btv setImage:[UIImage imageNamed:@"tvbottom"]];
     self.tableview.tableFooterView = btv;
     
+    UIImageView * btv2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth-20, 30*(ScreenWidth-20)/732)];
+    [btv2 setImage:[UIImage imageNamed:@"tvbottom"]];
+    self.textTV.tableFooterView = btv2;
+    
     self.tableview.contentInset = UIEdgeInsetsMake(20, 0, 20, 0);
+    self.textTV.contentInset = UIEdgeInsetsMake(20, 0, 20, 0);
     
     
     
@@ -148,6 +172,7 @@
             
             [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/summerjiushir.mp3"]];
             
+            self.currentTrack.des = @"  就卡死角度看拉克的拉伸看到了撒旦老师；克拉；斯柯达拉SD卡卡上的撒娇打开撒娇的卡上的骄傲的骄傲SD卡就卡手机德库拉圣诞节奥斯卡的\n  爱打架阿斯利康多久啊是肯定卡手机的撒旦可拉伸的卷卡式带就撒旦就撒肯德基阿斯顿啊了的控件阿斯利康的骄傲的就仨肯德基奥斯卡的骄傲是看得见啊三等奖哦i";
             [self.tableview reloadData];
         }
     }
@@ -157,6 +182,7 @@
         self.currentPicInfo.ratioWH = 1.5;
         self.currentPicInfo.title = @"不吃猫的老鼠jjssjsj接啊加大是件大事肯德基奥斯卡的进口量撒娇打算";
         self.currentPicInfo.artist = @"小黄鸡";
+        self.currentPicInfo.des = @"  就卡死角度看拉克的拉伸看到了撒旦老师；克拉；斯柯达拉SD卡卡上的撒娇打开撒娇的卡上的骄傲的骄傲SD卡就卡手机德库拉圣诞节奥斯卡的\n  爱打架阿斯利康多久啊是肯定卡手机的撒旦可拉伸的卷卡式带就撒旦就撒肯德基阿斯顿啊了的控件阿斯利康的骄傲的就仨肯德基奥斯卡的骄傲是看得见啊三等奖哦i";
         [self.tableview reloadData];
     }
     
@@ -180,7 +206,7 @@
           initialSpringVelocity:1.0
                         options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         [self.tableview setFrame:CGRectMake(10, 20, ScreenWidth-20, ScreenHeight-20)];
+                         [self.cms setFrame:self.view.frame];
                      } completion:^(BOOL finished) {
                          if (self.mediaType==0) {
                              if (!self.moreBtn) {
@@ -206,55 +232,81 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.mediaType==0) {
-        return self.rowHeight;
+    if ([tableView isEqual:self.tableview]) {
+        if (self.mediaType==0) {
+            return self.rowHeight;
+        }
+        else
+            return NormalCellHeight;
     }
     else
         return NormalCellHeight;
+
     
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.mediaType==0) {
-        static NSString *otherCellIdentifier = @"articlecell";
-        ArticleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
-        if (cell == nil) {
-            cell = [[ArticleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
-            cell.delegate = self;
+    if ([tableView isEqual:self.tableview]) {
+        if (self.mediaType==0) {
+            static NSString *otherCellIdentifier = @"articlecell";
+            ArticleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
+            if (cell == nil) {
+                cell = [[ArticleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
+                cell.delegate = self;
+            }
+            if (self.articleHTMLStr) {
+                cell.htmlStr = self.articleHTMLStr;
+            }
+            return cell;
         }
-        if (self.articleHTMLStr) {
-            cell.htmlStr = self.articleHTMLStr;
+        else if(self.mediaType==1)
+        {
+            static NSString *otherCellIdentifier = @"musiccell";
+            MusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
+            if (cell == nil) {
+                cell = [[MusicTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
+                cell.delegate = self;
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            if (self.currentTrack) {
+                cell.theTrack = self.currentTrack;
+            }
+            return cell;
         }
-        return cell;
-    }
-    else if(self.mediaType==1)
-    {
-        static NSString *otherCellIdentifier = @"musiccell";
-        MusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
-        if (cell == nil) {
-            cell = [[MusicTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
-            cell.delegate = self;
+        else
+        {
+            static NSString *otherCellIdentifier = @"piccell";
+            PicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
+            if (cell == nil) {
+                cell = [[PicTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
+                cell.delegate = self;
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.picInfo = self.currentPicInfo;
+            return cell;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (self.currentTrack) {
-            cell.theTrack = self.currentTrack;
-        }
-        return cell;
+
     }
     else
     {
         static NSString *otherCellIdentifier = @"piccell";
-        PicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
+        TextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
         if (cell == nil) {
-            cell = [[PicTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
+            cell = [[TextTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
             cell.delegate = self;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.picInfo = self.currentPicInfo;
+        if (self.mediaType==1) {
+            cell.des = self.currentTrack.des;
+        }
+        else if (self.mediaType==2){
+            cell.des = self.currentPicInfo.des;
+        }
+//        cell.picInfo = self.currentPicInfo;
         return cell;
     }
-
+    
 }
 -(void)scrollViewWillBeginDragging:(nonnull UIScrollView *)scrollView
 {
@@ -262,31 +314,34 @@
 }
 -(void)scrollViewDidScroll:(nonnull UIScrollView *)scrollView
 {
-    if (self.mediaType==0) {
-//        NSLog(@"contentoffset:%f",scrollView.contentOffset.y);
-        if (scrollView.contentOffset.y>lastOffsetY&&self.moreBtn.tag==1) {
-            self.moreBtn.tag = 2;
-            self.moreBtn.hidden = NO;
-            self.moreBtn.alpha = 1;
-            [UIView animateWithDuration:0.5 animations:^{
-                self.moreBtn.alpha = 0;
-            } completion:^(BOOL finished) {
-                self.moreBtn.hidden = YES;
-            }];
-            
-        }
-        else if(scrollView.contentOffset.y<lastOffsetY&&self.moreBtn.tag==2){
-            self.moreBtn.tag = 1;
-            self.moreBtn.hidden = NO;
-            self.moreBtn.alpha = 0;
-            [UIView animateWithDuration:0.5 animations:^{
-                self.moreBtn.alpha = 1;
-            } completion:^(BOOL finished) {
+    if ([scrollView isEqual:self.tableview]) {
+        if (self.mediaType==0) {
+            //        NSLog(@"contentoffset:%f",scrollView.contentOffset.y);
+            if (scrollView.contentOffset.y>lastOffsetY&&self.moreBtn.tag==1) {
+                self.moreBtn.tag = 2;
                 self.moreBtn.hidden = NO;
-            }];
-        }
-        
+                self.moreBtn.alpha = 1;
+                [UIView animateWithDuration:0.5 animations:^{
+                    self.moreBtn.alpha = 0;
+                } completion:^(BOOL finished) {
+                    self.moreBtn.hidden = YES;
+                }];
+                
+            }
+            else if(scrollView.contentOffset.y<lastOffsetY&&self.moreBtn.tag==2){
+                self.moreBtn.tag = 1;
+                self.moreBtn.hidden = NO;
+                self.moreBtn.alpha = 0;
+                [UIView animateWithDuration:0.5 animations:^{
+                    self.moreBtn.alpha = 1;
+                } completion:^(BOOL finished) {
+                    self.moreBtn.hidden = NO;
+                }];
+            }
             
+            
+        }
+
     }
 }
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
@@ -353,6 +408,11 @@
     self.rowHeight = height;
 //    self.tableview.contentSize = CGSizeMake(ScreenWidth-20, height+40);
     [self.tableview reloadData];
+}
+
+-(void)toTextView
+{
+    [self.cms flipTouched:nil];
 }
 
 - (void)didReceiveMemoryWarning {

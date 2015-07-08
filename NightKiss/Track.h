@@ -23,5 +23,6 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic,strong)NSString * albumUrlStr;
 @property (nonatomic, strong) NSURL *audioFileURL;
+@property (nonatomic,strong)NSString * des;
 
 @end

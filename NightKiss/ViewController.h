@@ -13,6 +13,7 @@
 
 @interface ViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView * tableview;
+@property (nonatomic,strong)UITableView * textTV;
 @property (nonatomic,assign)CGFloat rowHeight;
 @property (nonatomic,assign)int mediaType;
 @property (nonatomic,assign)BOOL contentLoaded;
