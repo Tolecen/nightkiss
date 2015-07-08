@@ -129,6 +129,8 @@
 		97B188CE1B4BA7E600489ABB /* RNDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B188C61B4BA7E600489ABB /* RNDecryptor.m */; };
 		97B188CF1B4BA7E600489ABB /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B188C81B4BA7E600489ABB /* RNEncryptor.m */; };
 		97B188D31B4BA80300489ABB /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B188D21B4BA80300489ABB /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		97C52B621B4CC71100F0EF67 /* XLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C52B611B4CC71100F0EF67 /* XLProgressView.m */; };
+		97C52B651B4D05A200F0EF67 /* PicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C52B641B4D05A200F0EF67 /* PicInfo.m */; };
 		97E3BD031B4A7B4200392DDD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E3BD021B4A7B4200392DDD /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -368,6 +370,10 @@
 		97B188C81B4BA7E600489ABB /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
 		97B188D11B4BA80300489ABB /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		97B188D21B4BA80300489ABB /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		97C52B601B4CC71100F0EF67 /* XLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLProgressView.h; sourceTree = "<group>"; };
+		97C52B611B4CC71100F0EF67 /* XLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLProgressView.m; sourceTree = "<group>"; };
+		97C52B631B4D05A200F0EF67 /* PicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicInfo.h; sourceTree = "<group>"; };
+		97C52B641B4D05A200F0EF67 /* PicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicInfo.m; sourceTree = "<group>"; };
 		97E3BD021B4A7B4200392DDD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -688,9 +694,13 @@
 			children = (
 				978198D41B43DE4C0034E0F9 /* Track.h */,
 				978198D51B43DE4C0034E0F9 /* Track.m */,
+				97C52B631B4D05A200F0EF67 /* PicInfo.h */,
+				97C52B641B4D05A200F0EF67 /* PicInfo.m */,
 				9708F00B1B4789E3004277F6 /* MediaCellDelegate.h */,
 				97797B5C1B4BA48200F19AF0 /* NetManager.h */,
 				97797B5D1B4BA48200F19AF0 /* NetManager.m */,
+				97C52B601B4CC71100F0EF67 /* XLProgressView.h */,
+				97C52B611B4CC71100F0EF67 /* XLProgressView.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -990,6 +1000,7 @@
 				978198B21B43DD520034E0F9 /* DOUAudioRenderer.m in Sources */,
 				970AA1B31B42B32C0059448F /* MenuViewController.m in Sources */,
 				9708F00F1B478BE0004277F6 /* FXBlurView.m in Sources */,
+				97C52B651B4D05A200F0EF67 /* PicInfo.m in Sources */,
 				97B188A01B4BA6B600489ABB /* AFPropertyListRequestOperation.m in Sources */,
 				9781987E1B43D3960034E0F9 /* EGOImageLoader.m in Sources */,
 				9708F0121B478BE9004277F6 /* FSMaskControl.m in Sources */,
@@ -1011,6 +1022,7 @@
 				970AA1AB1B42B2970059448F /* RECommonFunctions.m in Sources */,
 				978198B61B43DD520034E0F9 /* DOUAudioVisualizer.m in Sources */,
 				978881FA1B46D0A000F21C26 /* UIImageView+HighlightedWebCache.m in Sources */,
+				97C52B621B4CC71100F0EF67 /* XLProgressView.m in Sources */,
 				978198B51B43DD520034E0F9 /* DOUAudioStreamer.m in Sources */,
 				975017F71B4685760048DF2E /* JTSlideShadowAnimation.m in Sources */,
 				9781987C1B43D3960034E0F9 /* EGOImageButton.m in Sources */,

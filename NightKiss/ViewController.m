@@ -9,17 +9,20 @@
 #import "ViewController.h"
 #import "ArticleTableViewCell.h"
 #import "MusicTableViewCell.h"
+#import "PicTableViewCell.h"
 #import "Track.h"
 #import "TFHpple.h"
 #import "UIImageView+WebCache.h"
 #import "ACImageBrowser.h"
 #import "MediaCellDelegate.h"
 #import "MoreOperationView.h"
-@interface ViewController ()<ArticleCellDelegate,ACImageBrowserDelegate,MediaCellDelegate>
+#import "PicInfo.h"
+@interface ViewController ()<ACImageBrowserDelegate,MediaCellDelegate>
 {
     float lastOffsetY;
 }
 @property (nonatomic,strong)Track * currentTrack;
+@property (nonatomic,strong)PicInfo * currentPicInfo;
 @property (nonatomic,strong)MoreOperationView * moreView;
 @end
 
@@ -28,18 +31,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mediaType = 0;
-    NSString * s = [[NSUserDefaults standardUserDefaults] objectForKey:@"mediaType"];
-    if (s) {
-        if ([s intValue]==0) {
-            self.mediaType = 1;
-        }
-        else
-            self.mediaType = 0;
-    }
- 
-    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.mediaType] forKey:@"mediaType"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    self.mediaType = 2;
+//    NSString * s = [[NSUserDefaults standardUserDefaults] objectForKey:@"mediaType"];
+//    if (s) {
+//        if ([s intValue]==0) {
+//            self.mediaType = 1;
+//        }
+//        else if([s intValue]==1){
+//            self.mediaType = 2;
+//        }
+//        else if ([s intValue]==2){
+//            self.mediaType = 0;
+//        }
+//    }
+// 
+//    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.mediaType] forKey:@"mediaType"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
     
     self.rowHeight = NormalCellHeight;
     
@@ -89,7 +96,8 @@
     
     //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
     [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:3];
-    [self getTodayContent];
+//    [self getTodayContent];
+    [self loadedContent];
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(void)getTodayContent
@@ -122,31 +130,44 @@
     
 }
 
+-(void)loadedContent
+{
+    if (self.mediaType==0) {
+        //        self.contentLoaded = YES;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
+        self.articleHTMLStr = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        [self.tableview reloadData];
+    }
+    else if (self.mediaType==1){
+        if (!self.currentTrack) {
+            self.currentTrack = [[Track alloc] init];
+            [self.currentTrack setArtist:@"久石譲"];
+            [self.currentTrack setTitle:@"Summer"];
+            self.currentTrack.albumUrlStr = @"http://7d9jfr.com1.z0.glb.clouddn.com/jiu82233.png?imageView2/2/w/500";
+            //            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
+            
+            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/summerjiushir.mp3"]];
+            
+            [self.tableview reloadData];
+        }
+    }
+    else if (self.mediaType==2){
+        self.currentPicInfo = [[PicInfo alloc] init];
+        self.currentPicInfo.imageUrl = @"http://i1.topit.me/1/09/15/1197700626e3c15091l.jpg";
+        self.currentPicInfo.ratioWH = 1.5;
+        self.currentPicInfo.title = @"不吃猫的老鼠jjssjsj接啊加大是件大事肯德基奥斯卡的进口量撒娇打算";
+        self.currentPicInfo.artist = @"小黄鸡";
+        [self.tableview reloadData];
+    }
+    
+    NSLog(@"dd%f,%f,%f",self.view.frame.size.width,ScreenWidth,ScreenHeight);
+    
+
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (self.mediaType==0) {
-//        self.contentLoaded = YES;
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
-//        self.articleHTMLStr = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//        [self.tableview reloadData];
-    }
-    else if (self.mediaType==1){
-//        if (!self.currentTrack) {
-//            self.currentTrack = [[Track alloc] init];
-//            [self.currentTrack setArtist:@"久石譲"];
-//            [self.currentTrack setTitle:@"Summer"];
-//            self.currentTrack.albumUrlStr = @"http://7d9jfr.com1.z0.glb.clouddn.com/jiu82233.png?imageView2/2/w/500";
-////            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/qianqianquege.mp3"]];
-//            
-//            [self.currentTrack setAudioFileURL:[NSURL URLWithString:@"http://7d9jfr.com1.z0.glb.clouddn.com/summerjiushir.mp3"]];
-//            
-//             [self.tableview reloadData];
-//        }
-    }
-   
-    NSLog(@"dd%f,%f,%f",self.view.frame.size.width,ScreenWidth,ScreenHeight);
-
 }
 
 // After the content loaded, use this method.
@@ -191,6 +212,7 @@
     else
         return NormalCellHeight;
     
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -206,7 +228,7 @@
         }
         return cell;
     }
-    else
+    else if(self.mediaType==1)
     {
         static NSString *otherCellIdentifier = @"musiccell";
         MusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
@@ -220,6 +242,18 @@
         }
         return cell;
     }
+    else
+    {
+        static NSString *otherCellIdentifier = @"piccell";
+        PicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
+        if (cell == nil) {
+            cell = [[PicTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
+            cell.delegate = self;
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.picInfo = self.currentPicInfo;
+        return cell;
+    }
 
 }
 -(void)scrollViewWillBeginDragging:(nonnull UIScrollView *)scrollView
@@ -229,7 +263,7 @@
 -(void)scrollViewDidScroll:(nonnull UIScrollView *)scrollView
 {
     if (self.mediaType==0) {
-        NSLog(@"contentoffset:%f",scrollView.contentOffset.y);
+//        NSLog(@"contentoffset:%f",scrollView.contentOffset.y);
         if (scrollView.contentOffset.y>lastOffsetY&&self.moreBtn.tag==1) {
             self.moreBtn.tag = 2;
             self.moreBtn.hidden = NO;
