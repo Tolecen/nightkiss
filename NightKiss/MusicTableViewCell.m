@@ -82,8 +82,9 @@
         [self.contentView addSubview:self.albumV];
         
         UIButton * g = [UIButton buttonWithType:UIButtonTypeCustom];
-        g.backgroundColor = [UIColor redColor];
-        [g setFrame:CGRectMake(ScreenWidth-20-40, 10, 40, 40)];
+        g.backgroundColor = [UIColor clearColor];
+        [g setBackgroundImage:[UIImage imageNamed:@"detail_btn"] forState:UIControlStateNormal];
+        [g setFrame:CGRectMake(ScreenWidth-20-40-7, 5, 35, 35)];
         [self.contentView addSubview:g];
         [g addTarget:self action:@selector(toTextView) forControlEvents:UIControlEventTouchUpInside];
     }

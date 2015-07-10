@@ -45,8 +45,21 @@
         
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(picTouched)];
         [self.picImageview addGestureRecognizer:tap];
+        
+        UIButton * g = [UIButton buttonWithType:UIButtonTypeCustom];
+        g.backgroundColor = [UIColor clearColor];
+        [g setBackgroundImage:[UIImage imageNamed:@"detail_btn"] forState:UIControlStateNormal];
+        [g setFrame:CGRectMake(ScreenWidth-20-40-7, 5, 35, 35)];
+        [self.contentView addSubview:g];
+        [g addTarget:self action:@selector(toTextView) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+-(void)toTextView
+{
+    if ([self.delegate respondsToSelector:@selector(toTextView)]) {
+        [self.delegate toTextView];
+    }
 }
 -(void)layoutSubviews
 {

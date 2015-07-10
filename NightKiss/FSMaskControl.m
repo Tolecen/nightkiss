@@ -8,6 +8,7 @@
 
 #import "FSMaskControl.h"
 //#import "GSPublicView.h"
+#import "MoreOperationView.h"
 @interface FSMaskControl()
 
 @property (nonatomic, strong) UIView *containerView;
@@ -69,7 +70,11 @@
 //        GSPublicView * gv = (GSPublicView *)self.containerView;
 //        [gv animationDo];
     } completion:^(BOOL finished) {
+        
         if (finished) {
+//            self.containerView.
+            MoreOperationView * gview = (MoreOperationView *)self.containerView;
+            [gview.sideMenu open];
             if (self.didShowHandler) {
                 self.didShowHandler();
             }
@@ -79,6 +84,8 @@
 
 - (void)dismissIndex:(NSInteger)index {
     if (self.superview) {
+        MoreOperationView * gview = (MoreOperationView *)self.containerView;
+        [gview.sideMenu close];
         [UIView animateWithDuration:self.animationOut delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseInOut animations:^{
             self.alpha = 0.f;
             self.fBlurV.alpha = 0.f;
