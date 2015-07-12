@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 #import "JTSlideShadowAnimation.h"
 #import "FSMaskControl.h"
-
+//#import "MoreOperationView.h"
 @interface ViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView * tableview;
 @property (nonatomic,strong)UITableView * textTV;
