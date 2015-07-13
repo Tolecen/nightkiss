@@ -45,6 +45,15 @@
         [self.contentView addSubview:self.moreBtn];
         [self.moreBtn addTarget:self action:@selector(moreBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         
+        self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        //        self.playBtn.backgroundColor = [UIColor redColor];
+        [self.backBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_back2"] forState:UIControlStateNormal];
+        [self.backBtn setFrame:CGRectMake(20, NormalCellHeight-30-60+9, 42, 42)];
+        [self.contentView addSubview:self.backBtn];
+        self.backBtn.alpha = 0.9;
+        [self.backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        
+        
         
         self.loadingIndicaor = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [self.loadingIndicaor setFrame:CGRectMake(0, 0, 30, 30)];
@@ -84,7 +93,7 @@
         UIButton * g = [UIButton buttonWithType:UIButtonTypeCustom];
         g.backgroundColor = [UIColor clearColor];
         [g setBackgroundImage:[UIImage imageNamed:@"detail_btn"] forState:UIControlStateNormal];
-        [g setFrame:CGRectMake(ScreenWidth-20-40-7, 5, 35, 35)];
+        [g setFrame:CGRectMake(ScreenWidth-20-40-7, 3, 35, 35)];
         [self.contentView addSubview:g];
         [g addTarget:self action:@selector(toTextView) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -399,6 +408,13 @@
 {
     if ([self.delegate respondsToSelector:@selector(moreBtnClicked:)]) {
         [self.delegate moreBtnClicked:sender];
+    }
+}
+
+-(void)backBtnClicked:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(backBtnClicked:)]) {
+        [self.delegate backBtnClicked:sender];
     }
 }
 

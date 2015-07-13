@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mediaType = 1;
+    self.mediaType = 0;
 //    NSString * s = [[NSUserDefaults standardUserDefaults] objectForKey:@"mediaType"];
 //    if (s) {
 //        if ([s intValue]==0) {
@@ -51,6 +51,9 @@
 //    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.mediaType] forKey:@"mediaType"];
 //    [[NSUserDefaults standardUserDefaults] synchronize];
     
+    if (self.isSecondaryPage) {
+        self.mediaType = arc4random()%3;
+    }
     self.rowHeight = NormalCellHeight;
     
     UILabel * loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (ScreenHeight-30)/2, ScreenWidth, 30)];
@@ -117,12 +120,51 @@
         NSLog(@"theIndex:%ld",(long)index);
         [wSelf.maskControl dismissIndex:index];
     }];
+    [_moreView setButtonClicked:^(UIButton * button) {
+        NSLog(@"button.tag:%d",button.tag);
+        [wSelf moreOperationButtonClicked:button];
+    }];
     
-    //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
-    [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:3];
-//    [self getTodayContent];
+    
+    
     [self loadedContent];
+    //暂时延时调用，应该是内容加载完成之后调用，之前给个动画加载中...
+    if (!self.isSecondaryPage) {
+        [self performSelector:@selector(appearTheTable) withObject:nil afterDelay:3];
+        //    [self getTodayContent];
+        
+        
+ 
+
+    }
+    else
+    {
+        [self.cms setFrame:self.view.frame];
+        if (self.mediaType==0) {
+            if (!self.moreBtn) {
+                self.moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [self.moreBtn setFrame:CGRectMake(ScreenWidth-20-42, ScreenHeight-20-10-42, 42, 42)];
+                [self.moreBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_more"] forState:UIControlStateNormal];
+                [self.view addSubview:self.moreBtn];
+                self.moreBtn.tag = 1;
+                [self.moreBtn addTarget:self action:@selector(moreBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            if (!self.backBtn) {
+                self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [self.backBtn setFrame:CGRectMake(20, ScreenHeight-20-10-42, 42, 42)];
+                [self.backBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_back"] forState:UIControlStateNormal];
+                [self.view addSubview:self.backBtn];
+                self.backBtn.tag = 9;
+                [self.backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+    }
+
     // Do any additional setup after loading the view, typically from a nib.
+}
+-(void)moreOperationButtonClicked:(UIButton *)button
+{
+    
 }
 -(void)getTodayContent
 {
@@ -228,6 +270,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.mediaType==0&&![tableView isEqual:self.tableview]) {
+        return 0;
+    }
     return 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -272,6 +317,11 @@
             if (self.currentTrack) {
                 cell.theTrack = self.currentTrack;
             }
+            if (self.isSecondaryPage) {
+                cell.backBtn.hidden = NO;
+            }
+            else
+                cell.backBtn.hidden = YES;
             return cell;
         }
         else
@@ -290,7 +340,7 @@
     }
     else
     {
-        static NSString *otherCellIdentifier = @"piccell";
+        static NSString *otherCellIdentifier = @"textcell";
         TextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherCellIdentifier ];
         if (cell == nil) {
             cell = [[TextTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:otherCellIdentifier];
@@ -321,10 +371,17 @@
                 self.moreBtn.tag = 2;
                 self.moreBtn.hidden = NO;
                 self.moreBtn.alpha = 1;
+                
+                self.backBtn.tag = 10;
+                self.backBtn.hidden = NO;
+                self.backBtn.alpha = 1;
+                
                 [UIView animateWithDuration:0.5 animations:^{
                     self.moreBtn.alpha = 0;
+                    self.backBtn.alpha = 0;
                 } completion:^(BOOL finished) {
                     self.moreBtn.hidden = YES;
+                    self.backBtn.hidden = YES;
                 }];
                 
             }
@@ -332,10 +389,17 @@
                 self.moreBtn.tag = 1;
                 self.moreBtn.hidden = NO;
                 self.moreBtn.alpha = 0;
+                
+                self.backBtn.tag = 9;
+                self.backBtn.hidden = NO;
+                self.backBtn.alpha = 0;
+                
                 [UIView animateWithDuration:0.5 animations:^{
                     self.moreBtn.alpha = 1;
+                    self.backBtn.alpha = 1;
                 } completion:^(BOOL finished) {
                     self.moreBtn.hidden = NO;
+                    self.backBtn.hidden = NO;
                 }];
             }
             
@@ -349,10 +413,16 @@
     self.moreBtn.tag = 1;
     self.moreBtn.hidden = NO;
     self.moreBtn.alpha = 0;
+    
+    self.backBtn.tag = 9;
+    self.backBtn.hidden = NO;
+    self.backBtn.alpha = 0;
     [UIView animateWithDuration:0.5 animations:^{
         self.moreBtn.alpha = 1;
+        self.backBtn.alpha = 1;
     } completion:^(BOOL finished) {
         self.moreBtn.hidden = NO;
+        self.backBtn.hidden = NO;
     }];
 }
 -(void)moreBtnClicked:(id)sender
@@ -414,7 +484,10 @@
 {
     [self.cms flipTouched:nil];
 }
-
+-(void)backBtnClicked:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

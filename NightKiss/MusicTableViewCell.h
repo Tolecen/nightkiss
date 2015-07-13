@@ -35,6 +35,7 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 @property (nonatomic,strong) NSMutableDictionary * artDict;
 @property (nonatomic,strong) UIActivityIndicatorView * loadingIndicaor;
 @property (nonatomic,strong) UIButton * moreBtn;
+@property (nonatomic,strong) UIButton * backBtn;
 @property (nonatomic,assign) id <MediaCellDelegate> delegate;
 
 

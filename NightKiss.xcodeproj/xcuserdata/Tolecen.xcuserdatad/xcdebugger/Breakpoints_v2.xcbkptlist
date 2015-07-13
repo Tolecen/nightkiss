@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NightKiss/MusicTableViewCell.m"
-            timestampString = "458206402.764759"
+            timestampString = "458488484.301621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "-_updateBufferingStatus"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NightKiss/MusicTableViewCell.m"
-            timestampString = "458206402.764759"
+            timestampString = "458488484.301621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-toTextView"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NightKiss/ViewController.m"
-            timestampString = "458042756.472811"
+            timestampString = "458488484.301621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "415"
-            endingLineNumber = "415"
+            startingLineNumber = "485"
+            endingLineNumber = "485"
             landmarkName = "-toTextView"
             landmarkType = "5">
          </BreakpointContent>

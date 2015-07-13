@@ -10,5 +10,6 @@
 #import "HMSideMenu.h"
 @interface MoreOperationView : UIView
 @property (nonatomic, copy) void(^dismissHandle)(NSInteger index);
+@property (nonatomic, copy) void(^buttonClicked)(UIButton * button);
 @property (nonatomic, strong) HMSideMenu *sideMenu;
 @end

@@ -10,6 +10,7 @@
 
 @protocol MediaCellDelegate <NSObject>
 -(void)moreBtnClicked:(id)sender;
+-(void)backBtnClicked:(id)sender;
 -(void)articleClickedPicIndex:(int)index withArray:(NSArray *)array;
 -(void)resetCellHeightWithContentSizeH:(CGFloat)height;
 -(void)toTextView;

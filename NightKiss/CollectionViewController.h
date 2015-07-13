@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "SecondViewController.h"
 @interface CollectionViewController : BaseViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 {
     float lastOffsetY;

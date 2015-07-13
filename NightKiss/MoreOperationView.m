@@ -17,44 +17,24 @@
         
         UIButton * awardBtn= [UIButton buttonWithType:UIButtonTypeCustom];
         [awardBtn setFrame:CGRectMake(0, 0, 40, 40)];
+        awardBtn.tag = 1;
         [awardBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_award@2x"] forState:UIControlStateNormal];
-//        UIImageView *awardIcon = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
-//        [awardIcon setImage:[UIImage imageNamed:@"bottom_btn_award@2x"]];
-//        [awardItem addSubview:awardIcon];
-        
-//        UIView *zanItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-//        __block UIView * weakZan = zanItem;
-//        [zanItem setMenuActionWithBlock:^{
-//            NSLog(@"tapped email item");
-//           
-//        }];
-//        UIImageView *zanIcon = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35 , 35)];
-//        zanIcon.tag = 1;
-//        [zanIcon setImage:[UIImage imageNamed:@"bottom_btn_like@2x"]];
-//        [zanItem addSubview:zanIcon];
+        [awardBtn addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
+
         
         UIButton * zanItem= [UIButton buttonWithType:UIButtonTypeCustom];
         [zanItem setFrame:CGRectMake(0, 0, 40, 40)];
         [zanItem setBackgroundImage:[UIImage imageNamed:@"bottom_btn_like@2x"] forState:UIControlStateNormal];
+        zanItem.tag = 2;
+        [zanItem addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton * shareItem= [UIButton buttonWithType:UIButtonTypeCustom];
         [shareItem setFrame:CGRectMake(0, 0, 40, 40)];
         [shareItem setBackgroundImage:[UIImage imageNamed:@"bottom_btn_share@2x"] forState:UIControlStateNormal];
+        shareItem.tag = 3;
+        [shareItem addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
         
-//        UIView *shareItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-//        [shareItem setMenuActionWithBlock:^{
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-//                                                                message:@"Tapped facebook item"
-//                                                               delegate:nil
-//                                                      cancelButtonTitle:@"Okay"
-//                                                      otherButtonTitles:nil, nil];
-//            [alertView show];
-//            
-//        }];
-//        UIImageView *shareIcon = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 35, 35)];
-//        [shareIcon setImage:[UIImage imageNamed:@"bottom_btn_share@2x"]];
-//        [shareItem addSubview:shareIcon];
-//        
+    
        
         self.sideMenu = [[HMSideMenu alloc] initWithItems:@[awardBtn, zanItem, shareItem]];
         [self.sideMenu setItemSpacing:15.0f];
@@ -65,7 +45,11 @@
     }
     return self;
 }
-
+-(void)clicked:(UIButton *)button
+{
+    self.buttonClicked(button);
+    [self closeAction:nil];
+}
 -(void)zanClicked:(UIImageView *)zanv
 {
     

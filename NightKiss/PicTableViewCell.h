@@ -17,6 +17,7 @@
 @property (nonatomic,strong) UILabel * artistL;
 @property (nonatomic,strong) UILabel * desL;
 @property (nonatomic,strong) UIButton * moreBtn;
+@property (nonatomic,strong) UIButton * backBtn;
 @property (nonatomic,strong) PicInfo * picInfo;
 @property (nonatomic,assign) id<MediaCellDelegate>delegate;
 @end

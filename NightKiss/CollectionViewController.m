@@ -118,7 +118,9 @@
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    SecondViewController * sv = [[SecondViewController alloc] init];
+    sv.isSecondaryPage = YES;
+    [self.navigationController pushViewController:sv animated:YES];
 }
 
 -(void)scrollViewWillBeginDragging:(nonnull UIScrollView *)scrollView

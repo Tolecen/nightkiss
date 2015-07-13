@@ -63,7 +63,7 @@
 }
 
 - (void)showInTargetView:(UIView *)targetView {
-    [UIView animateWithDuration:.5f delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:.3f delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [targetView addSubview:self];
         self.alpha = 1.f;
         self.fBlurV.alpha = 1.f;

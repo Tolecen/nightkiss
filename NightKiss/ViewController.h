@@ -20,7 +20,9 @@
 @property (nonatomic,strong)NSString * articleHTMLStr;
 @property (strong, nonatomic) JTSlideShadowAnimation *shadowAnimation;
 @property (strong, nonatomic) UIButton * moreBtn;
+@property (strong, nonatomic) UIButton * backBtn;
 @property (nonatomic, strong) FSMaskControl *maskControl;
+@property (nonatomic,assign) BOOL isSecondaryPage;
 
 @end
 
