@@ -39,7 +39,6 @@
          (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     }
     
-#warning 上线 AppStore 时需要修改 pushMode 需要修改Apikey为自己的Apikey
     // 在 App 启动时注册百度云推送服务，需要提供 Apikey
     [BPush registerChannel:launchOptions apiKey:@"mrVqnQqjZPU4PvLhkn7EY6GY" pushMode:BPushModeProduction withFirstAction:nil withSecondAction:nil withCategory:nil isDebug:NO];
 
