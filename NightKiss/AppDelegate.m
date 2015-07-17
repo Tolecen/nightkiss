@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "BPush.h"
+#import <PgySDK/PgyManager.h>
 @interface AppDelegate ()
 
 @end
@@ -47,7 +48,10 @@
         NSDictionary* pushInfo = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
         [self processNotification:pushInfo];
     }
-
+//    [[PgyManager sharedPgyManager] setEnableFeedback:YES];
+    [[PgyManager sharedPgyManager] startManagerWithAppId:@"5ed7dc74f110266d5da2de4d6b477651"];
+    
+    [[PgyManager sharedPgyManager] checkUpdate];
     // Override point for customization after application launch.
     return YES;
 }
