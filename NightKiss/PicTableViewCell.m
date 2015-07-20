@@ -46,13 +46,15 @@
         self.titleLabel.font = [UIFont boldSystemFontOfSize:16];
         [self.contentView addSubview:self.titleLabel];
         
-        self.picImageview = [[UIImageView alloc] initWithFrame:CGRectZero];
+        self.picImageview = [[EGOImageButton alloc] initWithFrame:CGRectZero];
         self.picImageview.backgroundColor = [UIColor colorWithWhite:240/255.0f alpha:1];
+        self.picImageview.delegate = self;
         [self.contentView addSubview:self.picImageview];
-        self.picImageview.userInteractionEnabled = YES;
+        [self.picImageview addTarget:self action:@selector(picTouched) forControlEvents:UIControlEventTouchUpInside];
+//        self.picImageview.userInteractionEnabled = YES;
         
-        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(picTouched)];
-        [self.picImageview addGestureRecognizer:tap];
+//        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(picTouched)];
+//        [self.picImageview addGestureRecognizer:tap];
         
         UIButton * g = [UIButton buttonWithType:UIButtonTypeCustom];
         g.backgroundColor = [UIColor clearColor];
@@ -62,6 +64,10 @@
         [g addTarget:self action:@selector(toTextView) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+-(void)imageButtonLoadedImage:(EGOImageButton *)imageButton
+{
+
 }
 -(void)toTextView
 {
@@ -90,7 +96,7 @@
             [self.artistL setFrame:CGRectMake(10, self.titleLabel.frame.origin.y+20+5, ScreenWidth-40, 20)];
             
         }
-        [self.picImageview sd_setImageWithURL:[NSURL URLWithString:self.picInfo.imageUrl]];
+        [self.picImageview setImageURL:[NSURL URLWithString:self.picInfo.imageUrl]];
     }
 
     

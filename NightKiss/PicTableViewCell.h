@@ -10,9 +10,11 @@
 #import "UIImageView+WebCache.h"
 #import "PicInfo.h"
 #import "MediaCellDelegate.h"
-@interface PicTableViewCell : UITableViewCell
+#import "EGOImageButton.h"
+#import "UIImage+Blur.h"
+@interface PicTableViewCell : UITableViewCell<EGOImageButtonDelegate>
 @property (nonatomic,strong) UILabel * timeL;
-@property (nonatomic,strong) UIImageView * picImageview;
+@property (nonatomic,strong) EGOImageButton * picImageview;
 @property (nonatomic,strong) UILabel * titleLabel;
 @property (nonatomic,strong) UILabel * artistL;
 @property (nonatomic,strong) UILabel * desL;

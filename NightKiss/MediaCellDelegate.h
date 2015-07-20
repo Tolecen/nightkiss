@@ -14,4 +14,5 @@
 -(void)articleClickedPicIndex:(int)index withArray:(NSArray *)array;
 -(void)resetCellHeightWithContentSizeH:(CGFloat)height;
 -(void)toTextView;
+-(void)imageLoaded:(UIImage *)image;
 @end

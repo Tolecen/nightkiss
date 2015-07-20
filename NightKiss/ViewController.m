@@ -484,6 +484,11 @@
 {
     [self.cms flipTouched:nil];
 }
+
+-(void)imageLoaded:(UIImage *)image
+{
+    
+}
 -(void)backBtnClicked:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
