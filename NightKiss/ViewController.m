@@ -114,14 +114,14 @@
     
     [self.shadowAnimation start];
     
-    _moreView = [[MoreOperationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _moreView = [[MoreOperationView alloc] initWithFrame:[UIScreen mainScreen].bounds type:0];
     __weak __typeof(self) wSelf = self;
     [_moreView setDismissHandle:^(NSInteger index) {
         NSLog(@"theIndex:%ld",(long)index);
         [wSelf.maskControl dismissIndex:index];
     }];
     [_moreView setButtonClicked:^(UIButton * button) {
-        NSLog(@"button.tag:%d",button.tag);
+//        NSLog(@"button.tag:%d",button.tag);
         [wSelf moreOperationButtonClicked:button];
     }];
     
@@ -164,7 +164,9 @@
 }
 -(void)moreOperationButtonClicked:(UIButton *)button
 {
-    
+    if (button.tag==4) {
+        
+    }
 }
 -(void)getTodayContent
 {

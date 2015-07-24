@@ -26,15 +26,15 @@
         self.contentView.backgroundColor = [UIColor clearColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        self.iconView  = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth/2-22-20-70)/2, 25, 70, 70)];
+        self.iconView  = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth/2-22-20-35)/2, 25, 35, 35)];
 //        _iconView.center = CGPointMake(_iconView.center.x, self.contentView.center.y);
-        self.iconView.backgroundColor = [UIColor grayColor];
-        self.iconView.layer.cornerRadius = 35;
-        self.iconView.layer.masksToBounds = YES;
+        self.iconView.backgroundColor = [UIColor clearColor];
+//        self.iconView.layer.cornerRadius = ;
+//        self.iconView.layer.masksToBounds = YES;
         [self.contentView addSubview:_iconView];
 
         
-        self.titleL = [[UILabel alloc]initWithFrame:CGRectMake(0, 95, ScreenWidth/2-22-20, 30)];
+        self.titleL = [[UILabel alloc]initWithFrame:CGRectMake(0, 65, ScreenWidth/2-22-20, 30)];
 //        _titleL.center = CGPointMake(_titleL.center.x, _iconView.center.y);
         _titleL.textColor = [UIColor colorWithWhite:250/255.0f alpha:1];
         _titleL.font = [UIFont systemFontOfSize:14];
@@ -69,7 +69,7 @@
     // Do any additional setup after loading the view.
 
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+22, (ScreenHeight-450)/2,self.view.frame.size.width/2-22-20, 450)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+22, 100,self.view.frame.size.width/2-22-20, 300)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -77,7 +77,7 @@
     [self.view addSubview:_tableView];
     _tableView.backgroundColor = [UIColor clearColor];
     self.titleArr = @[@"往期晚安吻",@"我的收藏",@"设置"];
-    self.iconArr = @[@"market",@"free",@"bag"];
+    self.iconArr = @[@"sideBar_history",@"sideBar_collection",@"sideBar_setting"];
     
 }
 - (void)didReceiveMemoryWarning
@@ -113,7 +113,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    return 100;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
