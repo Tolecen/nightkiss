@@ -89,7 +89,8 @@ static char kActionHandlerTapGestureKey;
     } else {
 //        position.y += self.menuPosition == HMSideMenuPositionTop ? self.menuHeight : - (self.menuHeight+40);
         
-        position.x = self.menuPosition == HMSideMenuPositionTop ? self.menuHeight :  (item.center.x-100);
+        position.x = (self.menuPosition == HMSideMenuPositionLeft) ? (item.center.x+100) :  (item.center.x-100);
+         NSLog(@"center2.x:%f",position.x);
 
         [self animateLayer:item.layer
                withKeyPath:@"position.x"
@@ -111,7 +112,7 @@ static char kActionHandlerTapGestureKey;
     } else {
 //        position.y += self.menuPosition == HMSideMenuPositionTop ? - self.menuHeight : (self.menuHeight+40);
         
-        position.x = self.menuPosition == HMSideMenuPositionTop ? - self.menuHeight : (item.center.x+100);
+        position.x = self.menuPosition == HMSideMenuPositionLeft ? (item.center.x-100) : (item.center.x+100);
         
         [self animateLayer:item.layer
                withKeyPath:@"position.x"
@@ -124,8 +125,8 @@ static char kActionHandlerTapGestureKey;
 }
 
 - (BOOL)menuIsVertical {
-    if (self.menuPosition == HMSideMenuPositionLeft || self.menuPosition == HMSideMenuPositionRight)
-        return YES;
+//    if (self.menuPosition == HMSideMenuPositionLeft || self.menuPosition == HMSideMenuPositionRight)
+//        return YES;
     
     return NO;
 }
@@ -176,7 +177,7 @@ static char kActionHandlerTapGestureKey;
         itemInitialX = self.menuWidth / 2;
     } else {
         x = self.superview.frame.size.width / 2 - (self.menuWidth / 2);
-        y = self.menuPosition == HMSideMenuPositionTop ? 0 - self.menuHeight : (self.superview.frame.size.height-80);
+        y = self.menuPosition == HMSideMenuPositionLeft ? (self.superview.frame.size.height-80) : (self.superview.frame.size.height-80);
     }
     
     self.frame = CGRectMake(x, y, self.menuWidth, self.menuHeight);;
@@ -185,8 +186,11 @@ static char kActionHandlerTapGestureKey;
     [self.items enumerateObjectsUsingBlock:^(UIView *item, NSUInteger idx, BOOL *stop) {
         if (self.menuIsVertical)
             [item setCenter:CGPointMake(itemInitialX, (idx * biggestHeight) + (idx * self.itemSpacing) + (biggestHeight / 2))];
-        else
-            [item setCenter:CGPointMake((idx * biggestWidth) + (idx * self.itemSpacing) + (biggestWidth / 2)+100, self.menuHeight / 2)];
+        else{
+            [item setCenter:CGPointMake((idx * biggestWidth) + (idx * self.itemSpacing) + (biggestWidth / 2)+ ((self.menuPosition == HMSideMenuPositionLeft)?(-100):100), self.menuHeight / 2)];
+            
+            NSLog(@"center.x:%f",item.center.x);
+        }
     }];
 }
 

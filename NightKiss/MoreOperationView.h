@@ -13,4 +13,5 @@
 @property (nonatomic, copy) void(^dismissHandle)(NSInteger index);
 @property (nonatomic, copy) void(^buttonClicked)(UIButton * button);
 @property (nonatomic, strong) HMSideMenu *sideMenu;
+@property (nonatomic, strong) HMSideMenu *secondSideMenu;
 @end
