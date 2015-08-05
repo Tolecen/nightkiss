@@ -19,15 +19,15 @@
             
             
             UIButton * awardBtn= [UIButton buttonWithType:UIButtonTypeCustom];
-            [awardBtn setFrame:CGRectMake(0, 0, 42, 42)];
+            [awardBtn setFrame:CGRectMake(0, 0, 54, 54)];
             awardBtn.tag = 1;
             [awardBtn setBackgroundImage:[UIImage imageNamed:@"bottom_shang"] forState:UIControlStateNormal];
             [awardBtn addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
-            UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 42, 62)];
+            UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 54, 74)];
             v1.backgroundColor  =[UIColor clearColor];
             [v1 addSubview:awardBtn];
             
-            UILabel * l1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 42, 42, 20)];
+            UILabel * l1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, 54, 20)];
             l1.backgroundColor = [UIColor clearColor];
             l1.textColor = [UIColor colorWithWhite:240/255.0f alpha:1];
             l1.textAlignment = NSTextAlignmentCenter;
@@ -36,15 +36,15 @@
             [v1 addSubview:l1];
             
             UIButton * zanItem= [UIButton buttonWithType:UIButtonTypeCustom];
-            [zanItem setFrame:CGRectMake(0, 0, 42, 42)];
+            [zanItem setFrame:CGRectMake(0, 0, 54, 54)];
             [zanItem setBackgroundImage:[UIImage imageNamed:@"bottom_like"] forState:UIControlStateNormal];
             zanItem.tag = 2;
             [zanItem addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
-            UIView *v2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 42, 62)];
+            UIView *v2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 54, 74)];
             v2.backgroundColor  =[UIColor clearColor];
             [v2 addSubview:zanItem];
             
-            UILabel * l2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 42, 42, 20)];
+            UILabel * l2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, 54, 20)];
             l2.backgroundColor = [UIColor clearColor];
             l2.textColor = [UIColor colorWithWhite:240/255.0f alpha:1];
             l2.textAlignment = NSTextAlignmentCenter;
@@ -53,15 +53,15 @@
             [v2 addSubview:l2];
             
             UIButton * colItem= [UIButton buttonWithType:UIButtonTypeCustom];
-            [colItem setFrame:CGRectMake(0, 0, 42, 42)];
+            [colItem setFrame:CGRectMake(0, 0, 54, 54)];
             [colItem setBackgroundImage:[UIImage imageNamed:@"bottom_collection"] forState:UIControlStateNormal];
             colItem.tag = 3;
             [colItem addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
-            UIView *v3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 42, 62)];
+            UIView *v3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 54, 74)];
             v3.backgroundColor  =[UIColor clearColor];
             [v3 addSubview:colItem];
             
-            UILabel * l3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 42, 42, 20)];
+            UILabel * l3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, 54, 20)];
             l3.backgroundColor = [UIColor clearColor];
             l3.textColor = [UIColor colorWithWhite:240/255.0f alpha:1];
             l3.textAlignment = NSTextAlignmentCenter;
@@ -70,16 +70,16 @@
             [v3 addSubview:l3];
             
             UIButton * shareItem= [UIButton buttonWithType:UIButtonTypeCustom];
-            [shareItem setFrame:CGRectMake(0, 0, 42, 42)];
+            [shareItem setFrame:CGRectMake(0, 0, 54, 54)];
             [shareItem setBackgroundImage:[UIImage imageNamed:@"bottom_share"] forState:UIControlStateNormal];
             shareItem.tag = 4;
             [shareItem addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
             
-            UIView *v4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 42, 62)];
+            UIView *v4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 54, 74)];
             v4.backgroundColor  =[UIColor clearColor];
             [v4 addSubview:shareItem];
             
-            UILabel * l4 = [[UILabel alloc] initWithFrame:CGRectMake(0, 42, 42, 20)];
+            UILabel * l4 = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, 54, 20)];
             l4.backgroundColor = [UIColor clearColor];
             l4.textColor = [UIColor colorWithWhite:240/255.0f alpha:1];
             l4.textAlignment = NSTextAlignmentCenter;

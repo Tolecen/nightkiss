@@ -90,6 +90,9 @@
 		978236A51B62597800E02F72 /* bottom_collection2.png in Resources */ = {isa = PBXBuildFile; fileRef = 978236A31B62597800E02F72 /* bottom_collection2.png */; };
 		978236A61B62597800E02F72 /* bottom_like2.png in Resources */ = {isa = PBXBuildFile; fileRef = 978236A41B62597800E02F72 /* bottom_like2.png */; };
 		978604C81B52264300F55711 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978604C71B52264300F55711 /* SecondViewController.m */; };
+		9786E4B61B64F71800522290 /* WebContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9786E4B51B64F71800522290 /* WebContentViewController.m */; };
+		9786E4BC1B64F79000522290 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9786E4B91B64F79000522290 /* NJKWebViewProgress.m */; };
+		9786E4BD1B64F79000522290 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9786E4BB1B64F79000522290 /* NJKWebViewProgressView.m */; };
 		9788817D1B46B30A00F21C26 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 978881781B46B30A00F21C26 /* TFHpple.m */; };
 		9788817E1B46B30A00F21C26 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9788817A1B46B30A00F21C26 /* TFHppleElement.m */; };
 		9788817F1B46B30A00F21C26 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9788817C1B46B30A00F21C26 /* XPathQuery.m */; };
@@ -315,6 +318,12 @@
 		978236A41B62597800E02F72 /* bottom_like2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_like2.png; sourceTree = "<group>"; };
 		978604C61B52264300F55711 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		978604C71B52264300F55711 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9786E4B41B64F71800522290 /* WebContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebContentViewController.h; sourceTree = "<group>"; };
+		9786E4B51B64F71800522290 /* WebContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebContentViewController.m; sourceTree = "<group>"; };
+		9786E4B81B64F79000522290 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		9786E4B91B64F79000522290 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		9786E4BA1B64F79000522290 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		9786E4BB1B64F79000522290 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		978881771B46B30A00F21C26 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		978881781B46B30A00F21C26 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		978881791B46B30A00F21C26 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -563,6 +572,8 @@
 				970AA1B21B42B32C0059448F /* MenuViewController.m */,
 				970AA1B51B42B9F10059448F /* SettingViewController.h */,
 				970AA1B61B42B9F10059448F /* SettingViewController.m */,
+				9786E4B41B64F71800522290 /* WebContentViewController.h */,
+				9786E4B51B64F71800522290 /* WebContentViewController.m */,
 				978DF7D11B493C6A00FD58A9 /* CollectionViewController.h */,
 				978DF7D21B493C6A00FD58A9 /* CollectionViewController.m */,
 				9708F0101B478BE9004277F6 /* FSMaskControl.h */,
@@ -618,6 +629,7 @@
 		970AA1A31B42B2810059448F /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				9786E4B71B64F79000522290 /* NJKWebViewProgress */,
 				9797BF091B58FF7400BAB04E /* pgy */,
 				978E85F91B549C7900A54C4D /* LibBPush */,
 				97A7919C1B4FC239005F5F72 /* HMSideMenu */,
@@ -823,6 +835,17 @@
 				97C52B611B4CC71100F0EF67 /* XLProgressView.m */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		9786E4B71B64F79000522290 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				9786E4B81B64F79000522290 /* NJKWebViewProgress.h */,
+				9786E4B91B64F79000522290 /* NJKWebViewProgress.m */,
+				9786E4BA1B64F79000522290 /* NJKWebViewProgressView.h */,
+				9786E4BB1B64F79000522290 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
 		978881761B46B30A00F21C26 /* TFHpple */ = {
@@ -1164,6 +1187,7 @@
 				970AA1801B42B16D0059448F /* AppDelegate.m in Sources */,
 				97B188CD1B4BA7E600489ABB /* RNCryptorEngine.m in Sources */,
 				978198B01B43DD520034E0F9 /* DOUAudioLPCM.m in Sources */,
+				9786E4B61B64F71800522290 /* WebContentViewController.m in Sources */,
 				978198B21B43DD520034E0F9 /* DOUAudioRenderer.m in Sources */,
 				970AA1B31B42B32C0059448F /* MenuViewController.m in Sources */,
 				9708F00F1B478BE0004277F6 /* FXBlurView.m in Sources */,
@@ -1228,6 +1252,8 @@
 				97B188B31B4BA71600489ABB /* NSString+SBJSON.m in Sources */,
 				978198D81B43DE4C0034E0F9 /* Track.m in Sources */,
 				978881FC1B46D0A000F21C26 /* UIView+WebCacheOperation.m in Sources */,
+				9786E4BC1B64F79000522290 /* NJKWebViewProgress.m in Sources */,
+				9786E4BD1B64F79000522290 /* NJKWebViewProgressView.m in Sources */,
 				978C9A9B1B5D167B0025DF5F /* UIImage+Blur.m in Sources */,
 				978881EF1B46D0A000F21C26 /* SDImageCache.m in Sources */,
 				978881F41B46D0A000F21C26 /* SDWebImageManager.m in Sources */,

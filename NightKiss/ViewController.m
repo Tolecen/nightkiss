@@ -147,6 +147,7 @@
                 [self.moreBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_more"] forState:UIControlStateNormal];
                 [self.view addSubview:self.moreBtn];
                 self.moreBtn.tag = 1;
+                self.moreBtn.alpha = 0.8;
                 [self.moreBtn addTarget:self action:@selector(moreBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
             }
             if (!self.backBtn) {
@@ -155,6 +156,7 @@
                 [self.backBtn setBackgroundImage:[UIImage imageNamed:@"bottom_btn_back"] forState:UIControlStateNormal];
                 [self.view addSubview:self.backBtn];
                 self.backBtn.tag = 9;
+                self.backBtn.alpha = 0.8;
                 [self.backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
             }
         }
@@ -372,11 +374,11 @@
             if (scrollView.contentOffset.y>lastOffsetY&&self.moreBtn.tag==1) {
                 self.moreBtn.tag = 2;
                 self.moreBtn.hidden = NO;
-                self.moreBtn.alpha = 1;
+                self.moreBtn.alpha = 0.8;
                 
                 self.backBtn.tag = 10;
                 self.backBtn.hidden = NO;
-                self.backBtn.alpha = 1;
+                self.backBtn.alpha = 0.8;
                 
                 [UIView animateWithDuration:0.5 animations:^{
                     self.moreBtn.alpha = 0;
@@ -397,8 +399,8 @@
                 self.backBtn.alpha = 0;
                 
                 [UIView animateWithDuration:0.5 animations:^{
-                    self.moreBtn.alpha = 1;
-                    self.backBtn.alpha = 1;
+                    self.moreBtn.alpha = 0.8;
+                    self.backBtn.alpha = 0.8;
                 } completion:^(BOOL finished) {
                     self.moreBtn.hidden = NO;
                     self.backBtn.hidden = NO;
@@ -420,8 +422,8 @@
     self.backBtn.hidden = NO;
     self.backBtn.alpha = 0;
     [UIView animateWithDuration:0.5 animations:^{
-        self.moreBtn.alpha = 1;
-        self.backBtn.alpha = 1;
+        self.moreBtn.alpha = 0.8;
+        self.backBtn.alpha = 0.8;
     } completion:^(BOOL finished) {
         self.moreBtn.hidden = NO;
         self.backBtn.hidden = NO;
@@ -429,14 +431,19 @@
 }
 -(void)moreBtnClicked:(id)sender
 {
+    __weak ViewController * weakSelf = self;
     _maskControl = [[FSMaskControl alloc] initWithContainerView:self.moreView];
     
     _maskControl.didDismissHandler = ^ {
-        [UIView animateWithDuration:.5f animations:^{
-            
-        }];
+//        [UIView animateWithDuration:.5f animations:^{
+//            
+//        }];
+        weakSelf.moreBtn.hidden = NO;
+        weakSelf.backBtn.hidden = NO;
     };
     [_maskControl showInTargetView];
+    self.moreBtn.hidden = YES;
+    self.backBtn.hidden = YES;
     
 }
 -(void)articleClickedPicIndex:(int)index withArray:(NSArray *)array
