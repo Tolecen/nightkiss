@@ -41,8 +41,8 @@
 -(void)startLoadContent
 {
    
-    [self.webview loadHTMLString:self.htmlStr baseURL:nil];
-//    [self.webview loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://mengbaopai.com/"]]];
+//    [self.webview loadHTMLString:self.htmlStr baseURL:nil];
+    [self.webview loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ningweb.com/article/1447/"]]];
 }
 -(BOOL)webView:(nonnull UIWebView *)webView shouldStartLoadWithRequest:(nonnull NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
@@ -76,6 +76,9 @@
         [self.delegate resetCellHeightWithContentSizeH:myWebView.scrollView.contentSize.height];
     }
     self.loaded = YES;
+    NSString *lJs = @"document.documentElement.innerHTML";//获取当前网页的html
+    self.htmlStr = [myWebView stringByEvaluatingJavaScriptFromString:lJs];
+    
     NSData * data = [self.htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     doc = [TFHpple hppleWithHTMLData:data encoding:@"UTF-8"];
     NSArray * items = [doc searchWithXPathQuery:@"//img"];
