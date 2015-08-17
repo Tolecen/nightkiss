@@ -12,6 +12,7 @@
 #import "JSON.h"
 #import "SFHFKeychainUtils.h"
 @interface NetManager : NSObject
++(NSMutableDictionary *)commonDict;
 +(void)requestWithReqPath:(NSString *)reqPath Parameters:(NSDictionary *)parameters  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 @end

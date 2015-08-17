@@ -56,6 +56,9 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    currentPage = 0;
+    
     self.view.backgroundColor = [UIColor clearColor];
     UIImageView * h = [[UIImageView alloc] initWithFrame:self.view.frame];
     h.image = [UIImage imageNamed:@"background"];
@@ -100,6 +103,19 @@
     [self.bottomV addSubview:titleL];
     titleL.text = self.title;
     
+    [self getList];
+    
+}
+-(void)getList
+{
+    NSMutableDictionary * dict = [NetManager commonDict];
+    [dict setObject:[NSString stringWithFormat:@"%d",0] forKey:@"page"];
+    [dict setObject:@"20" forKey:@"pageSize"];
+    [NetManager requestWithReqPath:@"/nightkiss/getAllMedias" Parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"history:%@",responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {

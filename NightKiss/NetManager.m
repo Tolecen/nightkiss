@@ -73,7 +73,7 @@ static inline NSString * get_uuid()
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:[BaseURL stringByAppendingString:reqPath]]];
-    [httpClient setParameterEncoding:AFJSONParameterEncoding];
+    [httpClient setParameterEncoding:AFFormURLParameterEncoding];
     [httpClient postPath:@"" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
         NSString *resText = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];

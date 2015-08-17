@@ -127,12 +127,14 @@
     {
         CollectionViewController * historyV = [[CollectionViewController alloc] init];
         historyV.title = @"往期晚安吻";
+        historyV.collectionPageType = CollectionPageTypeHistory;
         [navigationController pushViewController:historyV animated:YES];
 
     }
     else if (indexPath.row==1){
         CollectionViewController * historyV = [[CollectionViewController alloc] init];
         historyV.title = @"我的收藏";
+        historyV.collectionPageType = CollectionPageTypeCollected;
         [navigationController pushViewController:historyV animated:YES];
     }
     
