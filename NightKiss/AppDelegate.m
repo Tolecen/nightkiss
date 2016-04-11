@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "BPush.h"
-#import <PgySDK/PgyManager.h>
 @interface AppDelegate ()
 
 @end
@@ -41,17 +39,14 @@
     }
     
     // 在 App 启动时注册百度云推送服务，需要提供 Apikey
-    [BPush registerChannel:launchOptions apiKey:@"mrVqnQqjZPU4PvLhkn7EY6GY" pushMode:BPushModeProduction withFirstAction:nil withSecondAction:nil withCategory:nil isDebug:NO];
+
 
     if (launchOptions) {
         //截取apns推送的消息
         NSDictionary* pushInfo = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
         [self processNotification:pushInfo];
     }
-//    [[PgyManager sharedPgyManager] setEnableFeedback:YES];
-    [[PgyManager sharedPgyManager] startManagerWithAppId:@"5ed7dc74f110266d5da2de4d6b477651"];
     
-    [[PgyManager sharedPgyManager] checkUpdate];
     // Override point for customization after application launch.
     return YES;
 }
@@ -75,10 +70,7 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     NSLog(@"test:%@",deviceToken);
-    [BPush registerDeviceToken:deviceToken];
-    [BPush bindChannelWithCompleteHandler:^(id result, NSError *error) {
-        
-    }];
+
     
 
     
@@ -94,7 +86,6 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     // App 收到推送的通知
-    [BPush handleNotification:userInfo];
    
     
     NSLog(@"%@",userInfo);
